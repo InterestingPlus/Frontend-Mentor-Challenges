@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="style.css"> <!-- style sheet -->
+  <link rel="stylesheet" href="responsive-style.css"> <!-- responsive for mobile style -->
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+</head>
+<body>
+
+  <main>
+
+  <!-- Rating state start -->
+    <section class="Rating">
+      <div class="star"><img src="images/icon-star.svg" alt=""></div>
+      <h1>How did we do?</h1>
+      <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+      
+      <div class="radio">
+        <input type="radio" name="rate" value="1" id="r1"><label for="r1">1</label>
+        <input type="radio" name="rate" value="2" id="r2"><label for="r2">2</label>
+        <input type="radio" name="rate" value="3" id="r3"><label for="r3">3</label>
+        <input type="radio" name="rate" value="4" id="r4"><label for="r4">4</label>
+        <input type="radio" name="rate" value="5" id="r5"><label for="r5">5</label>
+      </div>
+      <input id="rat" type="submit" value="SUBMIT" name="submit">
+
+    </section>
+  <!-- Rating state end -->
+
+  <!-- Thank you state start -->
+    <section class="Thank">
+      <div class="gif"><img src="images/illustration-thank-you.svg" alt=""></div>
+      <div class="confirm">
+        <p>You selected <span id="span">0</span> out of 5</p>
+      </div>
+      <h2>Thank you!</h2>
+      <p>We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!</p>
+    </section>
+  <!-- Thank you state end -->
+  
+  <!-- footer  -->
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://jatinporiya.epizy.com">Jatin Poriya</a>.
+  </div>
+
+  </main>
+
+<!-- Rating System -->
+<script>
+
+  var first = document.querySelector(".Rating");
+  var second = document.querySelector(".Thank");
+  var span = document.getElementById("span");
+  var submit = document.getElementById("rat");
+  var btns = document.getElementsByName("rate");
+  var footer = document.querySelector(".attribution");
+  
+  
+var sub = new Audio("submit.mp3");
+  submit.addEventListener( "click", () => {
+    first.style.display = "none";
+    second.style.display = "block";
+    footer.style.marginTop = "-10px";
+
+
+  
+
+  sub.play();
+
+  
+  });
+  second.addEventListener( "click", () => {
+    first.style.display = "block";
+    second.style.display = "none";
+    footer.style.marginTop = "10px";
+  });
+
+  for(const btn of btns){
+    btn.onclick = changeRate;
+  }
+  function changeRate(){
+    span.innerText = this.value;
+  }
+  
+  
+
+
+</script>
+
+</body>
+</html>

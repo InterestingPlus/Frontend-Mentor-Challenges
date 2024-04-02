@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="media.css">
+</head>
+<body>
+  
+  <main>
+    <section class="right-section">
+      
+      <div class="header">
+          <img src="images/logo.svg" alt="">
+      </div>
+
+      <img class="mwomen" src="images/hero-mobile.jpg" alt="">
+      
+      <div class="main-content">
+        
+        <div class="heading">
+          <h1>we're</h1>
+          <h2>coming soon</h2>
+        </div>
+
+        <p class="paragraph">Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
+
+      </div>
+
+      <form id="form" novalidate>
+
+        <div class="search">
+          <input type="email" placeholder="Email Address" id="email">
+          <button type="submit" title="submit"><img src="images/icon-arrow.svg" alt=""></button>
+          <img src="images/icon-error.svg" alt="" id="error-icon">
+        </div>
+        <div id="error-text">Please provide a valid email</div>
+      </form>
+
+    </section>
+
+    <section class="left-section">
+      <h2 style="display: none;">Jatin Poriya</h2>
+      <img class="dwomen" src="images/hero-desktop.jpg" alt="">
+    </section>
+
+  </main>
+
+  <script>
+    let email = document.getElementById("email");
+    let errorIcon = document.getElementById("error-icon");
+    let errorText = document.getElementById("error-text");
+    let form = document.getElementById("form");
+
+    form.addEventListener("submit", (e) => {
+      if(email.validity.typeMismatch) {
+        event.preventDefault();
+        errorIcon.style.opacity = 1;
+        errorText.style.opacity = 1;
+        email.style.borderColor = "hsl(0, 93%, 68%)";
+      } else {
+        event.preventDefault();
+        errorIcon.style.opacity = 0;
+        errorText.style.opacity = 0;
+        email.style.borderColor = "hsl(0, 25%, 85%)";
+      }
+    });
+
+    </script>
+
+  <!-- <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://jatinporiya.epizy.com">Jatin Poriya</a>.
+    </p>
+  </footer> -->
+</body>
+</html>

@@ -1,0 +1,89 @@
+@media screen and (max-width: 800px) {
+    main{
+        flex-direction: column;
+        align-items: center;
+        min-width: 375px;
+        width: 100%;
+        max-width: 100%;
+    }
+    section{
+        margin: 0;
+        padding: 0 !important;
+    }
+    .dwomen{
+        display: none;
+    }
+    .right-section{
+        display: flex;
+        flex-direction: column;
+        min-width: 375px;
+        width: 100%;
+        text-align: center;
+    }
+    .right-section .header{
+        text-align: left;
+        margin-top: 30px;
+    }
+    .right-section .header img{
+        margin-top: 1px;
+        margin-left: 32px;
+        width: 100px;
+    }
+
+    .right-section .mwomen{
+        display: block !important;
+        margin-top: 32px;
+    }
+    .right-section .main-content{
+        margin-top: 63px;
+    }
+    .right-section .main-content .heading{
+        font-size: 1.7rem;
+        letter-spacing: 10px;
+        line-height: 1.05;
+    }
+    .right-section .main-content .heading h1{
+        font-weight: 300;
+    }
+    .right-section .main-content .heading h2{
+        margin-top: -0px;
+        font-weight: 600;
+    }
+    .right-section .main-content .paragraph{
+        line-height: 1.5;
+        font-weight: 600;
+        font-size: .9rem;
+        letter-spacing: 0px;
+        margin-top: 15px;
+        padding: 0px 30px;
+    }
+
+
+    .right-section .search{
+        justify-content: center;
+        margin-top: 33px;
+        display: flex;
+    }
+    .right-section .search input{
+        height: 49px;
+        width: 82%;
+        font-size: 12px;
+        padding: 0 22px;
+    }
+    .right-section .search button{
+        transform: translate(0);
+        right: 32px;
+        width: 63px;
+    }
+    #error-icon{
+        top: 12px;
+        right: 105px;
+    }
+    #error-text{
+        position: absolute;
+        margin-left: 60px;
+        font-size: 15px;
+        opacity: 0;
+    }
+
+}
