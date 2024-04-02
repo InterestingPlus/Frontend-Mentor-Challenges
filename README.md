@@ -1,6 +1,6 @@
 # Frontend-Mentor-Challenges
 
-This repository showcases a collection of web projects I've developed by tackling challenges from Frontend Mentor. 
+Hey, I'm Jatin Poriya. This repository showcases a collection of web projects I've developed by tackling challenges from Frontend Mentor. 
 
 Frontend Mentor is a platform that offers real-world projects to help improve your front-end skills. 
 
