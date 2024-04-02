@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png" />
+
+    <link rel="stylesheet" href="asset/style.css" />
+    <link rel="stylesheet" href="asset/responsive.css" />
+
+    <title>Jatin Poriya | E-commerce product page</title>
+
+    <!-- Meta Description -->
+    <meta name="description" content="Explore our responsive e-commerce product page. Discover a wide range of products with stunning images and detailed descriptions. coded by Jatin Poriya">
+
+    <!-- Open Graph (OG) Meta Tags -->
+    <meta property="og:title" content="Responsive E-commerce Product Page | Jatin Poriya">
+    <meta property="og:description" content="Explore our responsive e-commerce product page. Discover a wide range of products with stunning images and detailed descriptions.">
+    <meta property="og:image" content="https://e-commerce-landing-page-jatin-poriya.netlify.app/design/desktop-preview.jpg">
+    <meta property="og:url" content="https://e-commerce-landing-page-jatin-poriya.netlify.app">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Responsive E-commerce Product Page">
+    <meta name="twitter:description" content="Explore our responsive e-commerce product page. Discover a wide range of products with stunning images and detailed descriptions.">
+    <meta name="twitter:image" content="https://e-commerce-landing-page-jatin-poriya.netlify.app/design/desktop-preview.jpg">
+    
+  </head>
+  <body>
+
+    <!-- ================== -->
+    <nav>
+      <div class="right-nav">
+        <div class="menu">
+          <img src="images/icon-menu.svg" alt="navbar" />
+        </div>
+        <a href="#" class="logo">
+          <img src="./images/logo.svg" alt="Sneakers" />
+        </a>
+        <ul>
+          <li><a href="#"> Collections </a></li>
+          <li><a href="#"> Men </a></li>
+          <li><a href="#"> Women </a></li>
+          <li><a href="#"> About </a></li>
+          <li><a href="#"> Contact </a></li>
+        </ul>
+      </div>
+      <div class="left-nav">
+        <img src="images/icon-cart.svg" alt="cart" id="cart-icon" />
+        <div id="cart-notf">0</div>
+
+        <img
+          src="images/image-avatar.png"
+          alt="profile-avatar"
+          id="profile"
+          class="prof" />
+
+        <div class="cart-section">
+          <div class="heading">
+            <h1>Cart</h1>
+            <img id="close" src="images/icon-close.svg" alt="close" />
+          </div>
+          <div class="wrapper">
+            <div class="product">
+              <img
+                src="images/image-product-1-thumbnail.jpg"
+                id="product-cart-img"
+                alt="product shoes img" />
+              <div class="product-info">
+                <h2>Fall Limited Edition Sneakers</h2>
+                <h3>$125.00 x <span>1</span> <b>$125.00</b></h3>
+              </div>
+              <img
+                src="images/icon-delete.svg"
+                id="delCart"
+                alt="Delete Button" />
+            </div>
+            <button id="check">Checkout</button>
+          </div>
+          <h2 id="mt">Your cart is empty.</h2>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="hero-images">
+        <img
+          src="images/image-product-1.jpg"
+          id="product-img"
+          alt="product-img" />
+        <div class="thumbnails">
+          <div class="thumb1 active">
+            <img src="images/image-product-1-thumbnail.jpg" alt="thumbnail1" />
+          </div>
+          <div class="thumb2">
+            <img src="images/image-product-2-thumbnail.jpg" alt="thumbnail1" />
+          </div>
+          <div class="thumb3">
+            <img src="images/image-product-3-thumbnail.jpg" alt="thumbnail1" />
+          </div>
+          <div class="thumb4">
+            <img src="images/image-product-4-thumbnail.jpg" alt="thumbnail1" />
+          </div>
+        </div>
+      </div>
+
+      <!-- ====== Mobile Device Image Slider================ -->
+      <div id="slider-container">
+        <div id="slider">
+          <div class="slide">
+            <img src="images/image-product-1.jpg" alt="Image 1" />
+          </div>
+          <div class="slide">
+            <img src="images/image-product-2.jpg" alt="Image 2" />
+          </div>
+          <div class="slide">
+            <img src="images/image-product-3.jpg" alt="Image 3" />
+          </div>
+          <div class="slide">
+            <img src="images/image-product-4.jpg" alt="Image 4" />
+          </div>
+        </div>
+        <div class="NPbtn">
+          <button id="pre2">
+            <i>Previus</i>
+            <img src="images/icon-previous.svg" alt="previus" />
+          </button>
+          <button id="nxt2">
+            <i>Next</i>
+            <img src="images/icon-next.svg" alt="next" />
+          </button>
+        </div>
+      </div>
+
+      <!-- ============= Main Section ================ -->
+      <section>
+        <h3>Sneaker Company</h3>
+        <h1>Fall Limited Edition Sneakers</h1>
+        <p>
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they’ll withstand everything
+          the weather can offer.
+        </p>
+
+        <div class="prize">
+          <h2>
+            $125.00
+            <span> 50% </span>
+          </h2>
+          <del> $250.00 </del>
+        </div>
+
+        <div class="cart">
+          <div class="cart-add-delete">
+            <button id="minus" class="dis">
+              <i>Minus</i>
+              <img src="images/icon-minus.svg" alt="icon-plus" />
+            </button>
+            <div id="cart-value">0</div>
+            <button id="plus">
+              <i>Plus</i>
+              <img src="images/icon-plus.svg" alt="icon-plus" />
+            </button>
+          </div>
+          <!-- Cart Button -->
+          <button id="cart-add-btn">
+            <img src="images/icon-cart2.svg" alt="icon-plus" /> Add to cart
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- ====== Light Box ====== -->
+    <div class="hero-wrapper">
+      <div class="hero-wrapper1"></div>
+      <div class="hero-wrapper2">
+        <div class="hero-images">
+          <div class="close-img">
+            <img src="images/icon-close2.svg" alt="close" />
+          </div>
+          <img
+            src="images/image-product-1.jpg"
+            id="product-img2"
+            alt="product-img" />
+
+          <div class="NPbtn">
+            <button id="pre">
+              <i>Previus</i>
+              <img src="images/icon-previous.svg" alt="previus" />
+            </button>
+            <button id="nxt">
+              <i>Next</i>
+              <img src="images/icon-next.svg" alt="next" />
+            </button>
+          </div>
+
+          <div class="thumbnails2">
+            <div class="thumb1 active">
+              <img
+                src="images/image-product-1-thumbnail.jpg"
+                alt="thumbnail1" />
+            </div>
+            <div class="thumb2">
+              <img
+                src="images/image-product-2-thumbnail.jpg"
+                alt="thumbnail1" />
+            </div>
+            <div class="thumb3">
+              <img
+                src="images/image-product-3-thumbnail.jpg"
+                alt="thumbnail1" />
+            </div>
+            <div class="thumb4">
+              <img
+                src="images/image-product-4-thumbnail.jpg"
+                alt="thumbnail1" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======== SideBar ====== -->
+    <div class="sidebar">
+      <div class="sidebar-back"></div>
+      <!-- ==== Wrapper -->
+      <div class="sidebar-wrapper">
+        <div class="close-btn">
+          <img src="images/icon-close.svg" alt="close-btn" />
+        </div>
+        <ul>
+          <li><a href="#"> Collections </a></li>
+          <li><a href="#"> Men </a></li>
+          <li><a href="#"> Women </a></li>
+          <li><a href="#"> About </a></li>
+          <li><a href="#"> Contact </a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- === Footer === -->
+    <footer>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+          Frontend Mentor
+        </a>
+        . Coded by
+        <a href="https://jatinporiya.epizy.com" target="_blank">
+          Jatin Poriya
+        </a>
+        .
+      </p>
+    </footer>
+
+    <script src="asset/script.js"></script>
+  </body>
+</html>

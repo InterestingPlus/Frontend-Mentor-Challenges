@@ -1,0 +1,152 @@
+@media screen and (max-width: 900px) {
+  body {
+    width: 100vw;
+  }
+  nav {
+    width: 100vw;
+    height: 80px;
+    padding: 20px !important;
+    left: 0;
+    transform: translate(0);
+  }
+  .sticky {
+    height: 60px;
+  }
+  nav .menu {
+    display: block;
+  }
+  nav .right-nav {
+    gap: 8px;
+  }
+  nav ul {
+    display: none !important ;
+  }
+  nav .left-nav {
+    position: initial;
+    gap: 15px;
+  }
+  #cart-icon {
+    position: relative;
+  }
+  nav .left-nav #cart-notf {
+    top: 12px;
+    left: auto;
+    right: 60px;
+  }
+  nav .left-nav #profile {
+    width: 35px;
+  }
+
+  nav .cart-section {
+    width: 95vw !important;
+    top: 93px !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+  .sticky .cart-section {
+    top: 75px !important;
+  }
+
+  main {
+    padding: 0 !important;
+    flex-direction: column;
+    width: 100vw;
+    margin-top: 70px;
+    margin-bottom: 20px;
+  }
+  main .hero-images {
+    display: none;
+  }
+  main #slider-container {
+    display: block;
+  }
+
+  main section {
+    padding: 25px;
+    margin-top: 0px !important ;
+  }
+  main section h3 {
+    margin-top: 0px;
+    font-size: 0.9rem;
+  }
+  main section h1 {
+    font-size: 1.78rem;
+    line-height: 32px;
+    margin-top: 12px;
+  }
+  main section p {
+    font-size: 0.933rem;
+    line-height: 25px;
+
+    margin-top: 17px;
+  }
+
+  main section .prize {
+    display: flex;
+    justify-content: space-between;
+  }
+  main section .prize h2 {
+    gap: 20px;
+  }
+  main section .prize del {
+    margin-top: 5px;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  main section .cart {
+    flex-direction: column;
+    margin-top: 15px;
+    height: auto;
+  }
+  main section .cart .cart-add-delete {
+    width: 100%;
+    min-height: 55px;
+    display: flex;
+    justify-content: space-between;
+  }
+  main section .cart .cart-add-delete button {
+    width: 60px !important;
+  }
+  main section .cart #cart-add-btn {
+    width: 100%;
+    min-height: 55px;
+  }
+
+  .hero-wrapper {
+    display: none;
+  }
+
+  footer {
+    margin-top: -20px;
+    padding: 20px;
+    width: 100vw !important;
+  }
+  footer p {
+    font-size: 0.8rem !important;
+  }
+}
+
+@media screen and (max-width: 1390px) {
+  main .hero-images {
+    min-width: 40%;
+  }
+  main .hero-images #product-img {
+    width: 100%;
+  }
+  main .hero-images .thumbnails {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  main {
+    flex-direction: column;
+  }
+  main .hero-images {
+    width: 80%;
+  }
+  main section {
+    margin-top: 80px;
+  }
+}
