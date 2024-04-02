@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+:root{
+--Mobile: 375px;
+--Desktop: 1440px;
+
+--Very-dark-blue-main-background: hsl(233, 47%, 7%);
+--Dark-desaturated-blue-card-background: hsl(244, 38%, 16%);
+--Soft-violet-accent: hsl(277, 64%, 61%);
+--Soft-violet-accent-img: hsla(277, 100%, 27%, 0.562);
+
+--White-main-heading-stats: hsl(0, 0%, 100%);
+--Slightly-transparent-white-main-paragraph: hsla(0, 0%, 100%, 0.6);
+--Slightly-transparent-white-stat-headings: hsla(0, 0%, 100%, 0.6);
+
+--Font-size: 14px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: .3s all;
+}
+h1,h2, h1 span {
+    font-family: Inter !important;
+    font-weight: 700;
+}
+p, span {
+    font-family: Lexend Deca;
+    font-weight: 400;
+}
+body{
+    background: var(--Very-dark-blue-main-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+main {
+    position: relative;
+    border-radius: 10px;
+    width: 1110px;
+    height: 445px;
+    color: var(--White-main-heading-stats);
+    background: var(--Dark-desaturated-blue-card-background);
+    display: flex;
+    overflow: hidden;
+}
+main .mobile {
+    position: relative;
+    display: none;
+}
+main .mobile img {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    object-fit: cover;
+}
+
+main .content {
+    padding: 70px;
+}
+main .content h1 {
+    margin-top: 2px;
+    font-size: 36px;
+    letter-spacing: 0.2px;
+}
+main .content h1 span{
+    color: var(--Soft-violet-accent);
+}
+main .content p {
+    margin-top: 26px;
+    margin-right: 50px;
+    line-height: 1.8;
+    letter-spacing: .3px;
+    font-size: var(--Font-size);
+    color: var(--Slightly-transparent-white-main-paragraph);
+}
+main .content .info {
+    margin-top: 70px;
+    margin-right: 77px;
+    justify-content: space-between;
+    display: flex;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+main .content .info h2 {
+    margin-bottom: 5px;
+}
+main .content .info span {
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    color: var(--Slightly-transparent-white-main-paragraph);
+}
+main .content .info div:first-child h2{
+    text-transform: lowercase;
+}
+main .desktop {
+    min-width: 540px;
+    position: relative;
+}
+
+main .after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: var(--Soft-violet-accent-img);
+}
+
+.attribution {
+    letter-spacing: 2px;
+    position: absolute;
+    right: 80px;
+    z-index: 2;
+    bottom: 15px;
+    font-size: 11px;
+    text-align: center;
+    color: hsl(0, 0%, 100%);
+    font-family: inter;
+    background: #0026ff17;
+    border-radius: 50px;
+}
+.attribution a {
+    text-decoration: none;
+    color: rgb(255, 164, 128);
+}
+.attribution a:hover {
+    color: orangered;
+}
+
+
