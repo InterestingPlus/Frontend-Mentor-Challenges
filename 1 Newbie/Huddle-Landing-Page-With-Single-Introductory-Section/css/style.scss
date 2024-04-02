@@ -1,0 +1,213 @@
+$Violet: hsl(257, 40%, 49%);
+$SoftViolet: hsl(257, 44%, 65%);
+$Paragraph: hsl(258, 75%, 92%);
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
+}
+body {
+  background: black;
+  overflow-x: hidden;
+}
+main {
+  width: 100vw;
+  min-height: 100dvh;
+  position: relative;
+  padding: 53px 80px 0 70px;
+  background: $Violet;
+  overflow-x: hidden;
+
+  #desktop-img,
+  #mobile-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    height: 100%;
+
+    user-select: none;
+    pointer-events: none;
+  }
+  #mobile-img {
+    display: none;
+  }
+
+  .header {
+    img {
+      width: 215px;
+      position: relative;
+      z-index: 99;
+
+      user-select: none;
+      pointer-events: none;
+    }
+  }
+
+  section {
+    position: relative;
+    z-index: 9;
+    display: flex;
+
+    .hero-img {
+      position: relative;
+      z-index: 9;
+      margin: 6.3% 0 0 2px;
+      min-width: 55%;
+
+      img {
+        width: 100%;
+        user-select: none;
+        pointer-events: none;
+      }
+    }
+
+    .main-content {
+      margin: 9.6% 0 0 4%;
+
+      h1 {
+        font-size: 2.5rem;
+        font-family: "Poppins", sans-serif;
+      }
+      p {
+        margin-top: 20px;
+        padding-right: 10px;
+        line-height: 1.65rem;
+        font-family: "Open Sans", sans-serif;
+        font-size: 1.2rem;
+        color: $Paragraph;
+      }
+      button {
+        margin-top: 26px;
+        padding: 16.5px;
+        width: 205px;
+
+        color: $SoftViolet;
+        background: #fff;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+        transition: 0.5s all;
+
+        font-size: 1.2rem;
+        font-weight: 600;
+        font-family: "Open Sans", sans-serif;
+
+        border-radius: 50px;
+        border: none;
+
+        &:hover {
+          color: #fff;
+          background: $SoftViolet;
+        }
+      }
+    }
+  }
+
+  .footer {
+    position: absolute;
+    right: 80px;
+    bottom: 40px;
+    z-index: 99;
+
+    .social-links {
+      display: flex;
+      gap: 16px;
+
+      .social {
+        width: 40px;
+        aspect-ratio: 1;
+
+        display: grid;
+        place-items: center;
+
+        border-radius: 50%;
+        border: 2px solid white;
+      }
+    }
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}
+
+@media screen and (max-width: 750px) {
+  main {
+    width: 750px;
+    width: 100vw;
+    height: auto;
+    padding: 35px 35px;
+
+    display: flex;
+    flex-direction: column;
+
+    #desktop-img {
+      display: none;
+    }
+    #mobile-img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .header img {
+      width: 42%;
+    }
+
+    section {
+      flex-direction: column;
+
+      .hero-img {
+        margin: 0;
+        margin-top: 60px;
+      }
+
+      .main-content {
+        margin: 0;
+        margin-top: 50px;
+        text-align: center;
+
+        h1 {
+          text-align: center;
+          font-size: 27px;
+        }
+        p {
+          padding: 0;
+          margin-top: 18px;
+          font-size: 20px;
+          line-height: 25px;
+        }
+        button {
+          margin-top: 30px;
+          margin-bottom: 70px;
+          width: 65%;
+          padding: 13px;
+          font-size: 15px;
+        }
+      }
+    }
+
+    .footer {
+      right: auto;
+      left: 50%;
+      bottom: 30px;
+      transform: translateX(-50%);
+
+      .social-links {
+        gap: 20px;
+
+        .social {
+          border-width: 1px;
+          width: 35px;
+        }
+      }
+    }
+  }
+}

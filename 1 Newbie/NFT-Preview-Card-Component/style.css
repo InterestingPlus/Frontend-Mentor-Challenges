@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Outfit;
+    transition: .5s;
+}
+:root{
+    --Soft-blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+    --Very-dark-blue-main-BG: hsl(217, 54%, 11%);
+    --Very-dark-blue-card-BG: hsl(216, 50%, 16%);
+    --Very-dark-blue-line: hsl(215, 32%, 27%);
+    --White: hsl(0, 0%, 100%);
+}
+body{
+    background: var(--Very-dark-blue-main-BG);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+}
+
+main {
+    padding: 22px 25px;
+    border-radius: 15px;
+    width: 350px;
+    min-height: 595px;
+    background: var(--Very-dark-blue-card-BG);
+}
+
+/* Image Section */
+main .img {
+    position: relative;
+    --opacity: 0;
+    animation: animation1 .8s alternate;
+}
+main .img #main {
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
+}
+main .img:after {
+    border-radius: 10px;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 99%;
+    z-index: 1;
+    opacity: var(--opacity);
+    background: var(--Cyan);
+}
+main .img #eye {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+main .img:hover > #eye {
+    opacity: 1;
+}
+main .img:hover {
+    --opacity: .5;
+}
+
+/* Main Content Section */
+main .content {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--Very-dark-blue-line);
+    margin-left: -2px;
+}
+main .content h1 {
+    font-size: 22px;
+    animation: animation2 .8s alternate;
+}
+main .content h1:hover {
+    color: var(--Cyan);
+}
+main .content p {
+    color: var(--Soft-blue);
+    margin-top: 16px;
+    letter-spacing: .2px;
+    line-height: 1.6;
+    font-weight: 400;
+    font-size: 17px;
+    animation: animation3 .8s alternate;
+}
+
+/* Bottom Content Section */
+main .bottom {
+    padding: 0 2px 4px;
+    margin-top: 22px;
+    display: flex;
+    justify-content: space-between;
+}
+main .bottom span {
+    display: flex;
+    align-items: center;
+}
+main .bottom .first {
+    font-weight: 600;
+    color: var(--Cyan);
+    letter-spacing: .5px;
+    animation: animation4 .8s alternate;
+}
+main .bottom .second {
+    font-weight: 600;
+    color: var(--Soft-blue);
+    animation: animation5 .8s alternate;
+}
+main .bottom span img {
+    margin-right: 5px;
+}
+
+/* Profile Section */
+main .profile {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    animation: animation6 .8s alternate;
+}
+main .profile img {
+    margin-left: -2px;
+    width: 33px;
+    border-radius: 50%;
+    border: 1px solid var(--Soft-blue);
+}
+main .profile p {
+    margin-left: 16px;
+    color: var(--Soft-blue);
+}
+main .profile p span {
+    color: var(--White);
+    font-weight: 400;
+}
+main .profile p span:hover {
+    color: var(--Cyan);
+}
+
+/* Credit Section */
+.attribution {
+    position: absolute;
+    font-size: 11px;
+    text-align: center;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+}
+.attribution a {
+    text-decoration: none;
+    color: var(--Cyan);
+}
+.attribution a:hover {
+    color: orange;
+}
+
+
+/* Animation */
+@keyframes animation1 {
+    0%{
+        opacity: 0;
+        transform: scale(-1);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes animation2 {
+    0%{
+        opacity: 0;
+        transform: translate(-30px,0);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+@keyframes animation3 {
+    0%{
+        opacity: 0;
+        transform: translate(30px,0);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+@keyframes animation4 {
+    0%{
+        opacity: 0;
+        transform: scale(-1);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes animation5 {
+    0%{
+        opacity: 0;
+        transform: scale(-1);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes animation6 {
+    0%{
+        opacity: 0;
+        transform: translate(0,-30px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}

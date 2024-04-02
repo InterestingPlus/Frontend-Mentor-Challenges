@@ -1,0 +1,55 @@
+@media screen and (max-width: 800px) {
+    #div{
+        display: none;
+    }
+    main {
+        margin: 20px 0;
+        width: 90%;
+        height: auto;
+        min-height: auto;
+        padding: 25px;
+    }
+
+    /* Main Content Section */
+    main .content h1 {
+        letter-spacing: 0.1px;
+    }
+    main .content p {
+        margin-top: 14px;
+        font-size: 15px;
+        letter-spacing: 0.5px;
+        line-height: 1.7;
+    }
+
+    /* Bottom Content Section */
+    main .bottom {
+        margin-top: 16px;
+        padding: 0px;
+    }
+    main .bottom .first {
+        letter-spacing: 0.2px;
+        font-size: 15px;
+    }
+    main .bottom .first img {
+        width: 10px;
+        margin-right: 7px;
+    }
+    main .bottom .second {
+        letter-spacing: 0px;
+        font-size: 15px;
+    }
+    main .bottom .second img {
+        margin-right: 7px;
+    }
+
+    /* Profile Section */
+    main .profile {
+        margin-top: 11px;
+    }
+    main .profile img{
+        margin-top: 1px;
+    }
+    main .profile img p{
+        font-size: 10px;
+    }
+}

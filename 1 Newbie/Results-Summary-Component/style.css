@@ -1,0 +1,375 @@
+@font-face {
+    font-family: 'HankenGrotesk';
+    font-display: swap;
+    font-weight: 100 900;
+    src: url('assets/fonts/HankenGrotesk-VariableFont_wght.ttf') format('truetype');
+}
+
+:root {
+    --clr-primary-hsl-400: 252, 100%, 67%;
+    --clr-primary-hsl-500: 256, 72%, 46%;
+    --clr-secondary-hsl-400: 241, 81%, 54%;
+    --clr-secondary-hsl-500: 241, 72%, 46%;
+
+    --clr-neutral-hsl-100: 0, 0%, 100%;
+    --clr-neutral-hsl-200: 221, 100%, 96%;
+    --clr-neutral-hsl-300: 241, 100%, 89%;
+    --clr-neutral-hsl-700: 224, 30%, 27%;
+
+    --clr-neutral-100: hsl(var(--clr-neutral-hsl-100));
+    --clr-neutral-200: hsl(var(--clr-neutral-hsl-200));
+    --clr-neutral-300: hsl(var(--clr-neutral-hsl-300));
+    --clr-neutral-700: hsl(var(--clr-neutral-hsl-700));
+
+
+    --clr-primary-400: hsl(var(--clr-primary-hsl-400));
+    --clr-primary-500: hsla(var(--clr-primary-hsl-500));
+    --clr-secondary-400: hsl(var(--clr-secondary-hsl-400));
+
+    --gradient-primary: linear-gradient(
+        var(--clr-primary-400), 
+        var(--clr-secondary-400));
+    
+    --gradient-to-transparent: linear-gradient(
+        var(--clr-primary-500),
+        hsl(var(--clr-secondary-hsl-500), 0));
+    
+    --clr-accent-1: 0, 100%, 67%;
+    --clr-accent-2: 39, 100%, 56%;
+    --clr-accent-3: 166, 100%, 37%;
+    --clr-accent-4: 234, 85%, 45%;
+    
+    --font-family-default: 'HankenGrotesk', sans-serif;
+    
+    /* font weight */
+    --fw-regular: 500;
+    --fw-bold: 700;
+    --fw-black: 800;
+    
+    /* font size */
+    --fs-400: 1.125rem;
+    --fs-500: 1.25rem;
+    --fs-600: 1.5rem;
+    --fs-700: 1.75rem;
+    --fs-800: 2rem;
+    --fs-900: 5rem;
+
+    /* Primary */
+    --Light-red: hsl(0, 100%, 67%);
+    --Orangey-yellow: hsl(39, 100%, 56%);
+    --Green-teal: hsl(166, 100%, 37%);
+    --Cobalt-blue: hsl(234, 85%, 45%);
+
+    --Light-b-red: hsla(0, 100%, 67%, 0.05);
+    --Orangey-b-yellow: hsla(39, 100%, 56%, 0.05);
+    --Green-b-teal: hsla(166, 100%, 37%, 0.05);
+    --Cobalt-b-blue: hsla(234, 85%, 45%, 0.05);
+    
+    /* Gradients */
+    --Light-slate-blue-background: hsl(252, 100%, 67%);
+    --Light-royal-blue-background: hsl(241, 81%, 54%);
+    --Violet-blue-circle: hsla(256, 72%, 46%, 1);
+    --Persian-blue-circle: hsla(241, 72%, 46%, 0);
+
+    /* Neutral */
+    --White: hsl(0, 0%, 100%);
+    --Pale-blue: hsl(221, 100%, 96%);
+    --Light-lavender: hsl(241, 100%, 89%);
+    --Dark-gray-blue: hsl(224, 30%, 27%);
+
+}
+@import url(https://fonts.google.com/specimen/Hanken+Grotesk);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    height: 125vh; /* for better match in frontend mentor challange comparison view, otherwise we don't need to specify height width to body   */
+    
+
+   /* min-height: 100vh; */
+    background-color: rgba(250, 249, 255, 0.8);
+    font-family: var(--font-family-default);
+    color: var(--clr-neutral-700);
+    font-size: var(--fs-400);
+    position: relative;
+}
+
+/* 
+
+Desktoe
+-width = 1440px
+
+Mobile
+-width = 375px
+
+*/
+
+main{
+    background: white;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 735px;
+    place-items: center;
+    border-radius: 30px;
+    margin-bottom: 2rem;
+    box-shadow: .5rem 1rem 3rem rgba(0, 51, 190, 0.096);
+}
+
+
+section{
+    min-height: 510px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 30px;
+}
+.first{
+    align-items: center;
+    text-align: center;
+    color: hsl(var(--clr-neutral-hsl-100), .7);
+    background: var(--gradient-primary);
+}
+.second{
+    padding: 30px;
+    background: white;
+}
+
+.first > h2{
+    display: flex;
+    font-size: 1.46rem;
+    top: 38px;
+    letter-spacing: 1.3px;
+    position: relative;
+}
+.first .circle{
+    width: 200px;
+    border-radius: 50%;
+    background: var(--gradient-to-transparent);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 75px;
+    aspect-ratio: 1 / 1;
+    position: relative;
+}
+.first .circle h1{
+    position: absolute;
+    font-size: 4.7rem;
+    font-weight: var(--fw-bold);
+    color: var(--clr-neutral-100);
+    top: 40px;
+}
+.first .circle p{
+    position: absolute;
+    top: 130px;
+}
+.first .great{
+    position: relative;
+    top: 103px;
+    font-size: var(--fs-700);
+    color: var(--clr-neutral-100);
+    letter-spacing: 2.5px;
+}
+.first .greatp{
+    position: relative;
+    top: 120px;
+    margin: 0px 60px;
+}
+
+
+
+.second .summary{
+    position: relative;
+    top: 8px;
+    left: 10px;
+    font-size: var(--fs-600);
+}
+.boxe{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 33px;
+    width: 100%;
+    position: relative;
+    left: 10px;
+}
+.one{
+    color: var(--Light-red);
+    margin-left: 13px;
+}
+.two{
+    color: var(--Orangey-yellow);
+    margin-left: 13px;
+}
+.three{
+    color: var(--Green-teal);
+    margin-left: 13px;
+}
+.four{
+    color: var(--Cobalt-blue);
+    margin-left: 13px;
+}
+.span {
+    width: 95%;
+    /* height: 55px; */
+    border-radius: 10px;
+    /* margin: 18px 0; */
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+    padding: 1rem;
+}
+.num1{
+    background: var(--Light-b-red);
+}
+.num2{
+    background: var(--Orangey-b-yellow);
+}
+.num3{
+    background: var(--Green-b-teal);
+}
+.num4{
+    background: var(--Cobalt-b-blue);
+}
+
+.content{
+    display: flex;
+    font-weight: var(--fw-black);
+    color: hsl(var(--clr-neutral-hsl-700), .5);
+}
+.score{
+    color: var(--clr-neutral-700);
+    margin-right: 10px;
+}
+.continue{
+    width: 97%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+button{
+    color: var(--clr-neutral-100);
+    background: var(--clr-neutral-700);
+    font-size: 20px;
+    width: 100%;
+    outline: none;
+    height: 58px;
+    border: none;
+    border-radius: 50px;
+    margin-left: 10px;
+}
+button:hover,
+button:focus
+{
+    background: var(--gradient-primary);
+}
+
+footer {
+    font-family: sans-serif;
+    font-size: 11px;
+    text-align: center;
+}
+footer a {
+    color: hsl(228, 45%, 44%);
+}
+
+
+img{
+    position: absolute;
+    user-select: none;
+    opacity: 0.5;
+    top: 0;
+    /* transform: translateY(-16px); */
+}
+
+@media screen and (max-width: 830px){
+    body{
+        max-width: 100vw;
+        align-items: center;
+        justify-content: flex-start;
+        background: #fff;
+    }
+    main{
+        width: 100%;
+        /* max-width: 375px; */
+        grid-template-columns: 1fr;
+        box-shadow: none;
+    }
+    .first{
+        min-height: 340px;
+        border-radius: 0 0 30px 30px;
+    }
+    .first > h2{
+        font-size: 1.05rem;
+        top: 8.5px;
+        letter-spacing: 0.3px;
+    }
+    .first .circle{
+        width: 140px;
+        top: 35px;
+    }
+    .first .circle h1{
+        font-size: 3.5rem;
+        top: 23px;
+    }
+    .first .circle p{
+        top: 94px;
+        font-size: .98rem;
+        font-weight: var(--fw-black);
+    }
+    .first .great{
+        top: 58px;
+        font-size: var(--fs-600);
+        letter-spacing: 0.3px;
+    }
+    .first .greatp{
+        font-size: 1rem;
+        top: 64px;
+        font-weight: var(--fw-bold);
+        margin: 0px 58px;
+    }
+
+    .second .summary{
+        position: relative;
+        top: -6px;
+        left: 2px;
+        font-size: 1.1rem;
+    }
+    .boxe{
+        margin-left: -10px;
+        margin-top: 20px;
+        gap: 22px;
+    }
+    .span{
+        width: 100%;
+        padding: .95rem;
+        font-size: .95rem;
+    }
+    .num{
+        transform: translate(-5px);
+    }
+
+    .continue{
+        width: 100%;
+    }
+    button{
+        font-size: 1.15rem;
+        letter-spacing: .3px;
+        margin-left: 0;
+        margin-top: -15px;
+    }
+
+    footer{
+        transform: translateY(-50px);
+    }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png" />
+
+    <title>
+      Frontend Mentor | Huddle landing page with single introductory section
+    </title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Font Awesome  -->
+    <script
+      src="https://kit.fontawesome.com/00c9303b62.js"
+      crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <main>
+      <div class="header">
+        <img src="images/logo.svg" alt="Logo" />
+      </div>
+
+      <section>
+        <div class="hero-img">
+          <img
+            src="images/illustration-mockups.svg"
+            alt="Desktop & Mobile Illustration Mockups" />
+        </div>
+        <div class="main-content">
+          <h1>Build The Community Your Fans Will Love</h1>
+          <p>
+            Huddle re-imagines the way we build communities. You have a voice,
+            but so does your audience. Create connections with your users as you
+            engage in genuine discussion.
+          </p>
+          <button>Register</button>
+        </div>
+      </section>
+      <div class="footer">
+        <div class="social-links">
+          <div class="social">
+            <i class="fa-brands fa-facebook-f"></i>
+          </div>
+          <div class="social">
+            <i class="fa-brands fa-twitter"></i>
+          </div>
+          <div class="social">
+            <i class="fa-brands fa-instagram fa-xl"></i>
+          </div>
+        </div>
+      </div>
+
+      <img id="desktop-img" src="images/bg-desktop.svg" alt="" />
+      <img id="mobile-img" src="images/bg-mobile.svg" alt="" />
+    </main>
+
+    <script>
+      if (window.innerHeight > window.innerWidth) {
+        document.querySelector("section").style.flexDirection = "column";
+        document.querySelector("section").style.textAlign = "center";
+      }
+    </script>
+  </body>
+</html>

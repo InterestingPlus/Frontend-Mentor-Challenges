@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+body {
+  background: black;
+  overflow-x: hidden;
+}
+
+main {
+  width: 100vw;
+  min-height: 100dvh;
+  position: relative;
+  padding: 53px 80px 0 70px;
+  background: hsl(257, 40%, 49%);
+  overflow-x: hidden;
+}
+main #desktop-img,
+main #mobile-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  height: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+main #mobile-img {
+  display: none;
+}
+main .header img {
+  width: 215px;
+  position: relative;
+  z-index: 99;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+main section {
+  position: relative;
+  z-index: 9;
+  display: flex;
+}
+main section .hero-img {
+  position: relative;
+  z-index: 9;
+  margin: 6.3% 0 0 2px;
+  min-width: 55%;
+}
+main section .hero-img img {
+  width: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+main section .main-content {
+  margin: 9.6% 0 0 4%;
+}
+main section .main-content h1 {
+  font-size: 2.5rem;
+  font-family: "Poppins", sans-serif;
+}
+main section .main-content p {
+  margin-top: 20px;
+  padding-right: 10px;
+  line-height: 1.65rem;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2rem;
+  color: hsl(258, 75%, 92%);
+}
+main section .main-content button {
+  margin-top: 26px;
+  padding: 16.5px;
+  width: 205px;
+  color: hsl(257, 44%, 65%);
+  background: #fff;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  transition: 0.5s all;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
+  border-radius: 50px;
+  border: none;
+}
+main section .main-content button:hover {
+  color: #fff;
+  background: hsl(257, 44%, 65%);
+}
+main .footer {
+  position: absolute;
+  right: 80px;
+  bottom: 40px;
+  z-index: 99;
+}
+main .footer .social-links {
+  display: flex;
+  gap: 16px;
+}
+main .footer .social-links .social {
+  width: 40px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 750px) {
+  main {
+    width: 750px;
+    width: 100vw;
+    height: auto;
+    padding: 35px 35px;
+    display: flex;
+    flex-direction: column;
+  }
+  main #desktop-img {
+    display: none;
+  }
+  main #mobile-img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  main .header img {
+    width: 42%;
+  }
+  main section {
+    flex-direction: column;
+  }
+  main section .hero-img {
+    margin: 0;
+    margin-top: 60px;
+  }
+  main section .main-content {
+    margin: 0;
+    margin-top: 50px;
+    text-align: center;
+  }
+  main section .main-content h1 {
+    text-align: center;
+    font-size: 27px;
+  }
+  main section .main-content p {
+    padding: 0;
+    margin-top: 18px;
+    font-size: 20px;
+    line-height: 25px;
+  }
+  main section .main-content button {
+    margin-top: 30px;
+    margin-bottom: 70px;
+    width: 65%;
+    padding: 13px;
+    font-size: 15px;
+  }
+  main .footer {
+    right: auto;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+  }
+  main .footer .social-links {
+    gap: 20px;
+  }
+  main .footer .social-links .social {
+    border-width: 1px;
+    width: 35px;
+  }
+}/*# sourceMappingURL=style.css.map */

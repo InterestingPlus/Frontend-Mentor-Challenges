@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mobile.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/screenfull.js/5.1.0/screenfull.min.js"></script>
+  
+  <title>Frontend Mentor | NFT preview card component</title>
+
+</head>
+<body>
+
+  <div id="div" style="height: 900px; width: 0px;"></div>
+  <main>
+    <section class="img">
+      <h1 style='display: none;'>demo</h1>
+      <img id="eye" src="images/icon-view.svg" alt="">
+      <img id="main" src="images/image-equilibrium.jpg" alt="">
+    
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="https://jatinporiya.epizy.com" target="_blank">Jatin Poriya</a>.
+      </div>
+
+    </section>
+    <section class="content">
+      <h1>Equilibrium #<span id="score">3429</span></h1>
+      <p>Our Equilibrium collection promotes balance and calm.</p>
+      <div class="bottom">
+        <span class="first"><img src="images/icon-ethereum.svg" alt=""> 0.0<span id="score2">41</span> ETH</span>
+        <span class="second"><img src="images/icon-clock.svg" alt=""> <span id="score3">3</span> days left</span>
+      </div>
+    </section>
+    <section class="profile">
+      <h1 style='display: none;'>demo</h1>
+      <img src="images/image-avatar.png" alt="">
+      <p>Creation of <span> Jules Wyvern</span></p>
+    </section>
+  </main>
+
+
+
+  <script>
+
+    let main = document.getElementById('main');
+
+    let img = document.querySelector('.img').addEventListener('click', () => {
+      if(screenfull.isEnabled){
+        screenfull.toggle(main);
+      }
+    })
+
+
+    // Scrore Aniamtion
+    var project = setInterval(projectDone, 1);
+    let count = 1;
+    
+    function projectDone() {
+      count = count + 54;
+      document.getElementById("score").innerHTML = count;
+      if(count >= 3429){
+        clearInterval(project);
+        document.getElementById("score").innerHTML = 3429;
+      }
+    }
+    var project1 = setInterval(projectDone1, 1);
+    let count1 = 1;
+    
+    function projectDone1() {
+      count1++;
+      document.getElementById("score2").innerHTML = count1;
+      if(count1 == 41){
+        clearInterval(project1);
+      }
+    }
+    var project2 = setInterval(projectDone2, 10);
+    let count2 = 1;
+    
+    function projectDone2() {
+      count2++;
+      document.getElementById("score3").innerHTML = count2;
+      if(count2 == 3){
+        clearInterval(project2);
+      }
+    }
+  </script>
+
+</body>
+</html>
