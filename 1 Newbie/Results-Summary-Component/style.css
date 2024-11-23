@@ -91,7 +91,7 @@ body{
     align-items: center;
     justify-content: center;
     
-    height: 125vh; /* for better match in frontend mentor challange comparison view, otherwise we don't need to specify height width to body   */
+    height: 100dvh; /* for better match in frontend mentor challange comparison view, otherwise we don't need to specify height width to body   */
     
 
    /* min-height: 100vh; */
