@@ -13,6 +13,13 @@
     />
 
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <title>
       Frontend Mentor | Fylo landing page with dark theme and features grid
@@ -97,10 +104,15 @@
 
       <!-- About Start -->
       <section id="about">
-        <img src="./images/illustration-stay-productive.png" alt="About" />
+        <div class="hero-img">
+          <img src="./images/illustration-stay-productive.png" alt="About" />
+        </div>
 
-        <div>
-          <h2>Stay productive, <br/> wherever you are</h2>
+        <div class="content">
+          <h2>
+            Stay productive, <br />
+            wherever you are
+          </h2>
 
           <p>
             Never let location be an issue when accessing your files. Fylo has
@@ -111,7 +123,9 @@
             for live collaboration. No email attachments required.
           </p>
 
-          <a href=""> See how Fylo works </a>
+          <a href="">
+            See how Fylo works <img src="./images/icon-arrow.svg" alt="" />
+          </a>
         </div>
       </section>
       <!-- About End -->
@@ -167,68 +181,74 @@
         </div>
       </section>
       <!-- Reviews End -->
-
-      <!--  -->
-
-      <section id="about">
-        <img src="./images/illustration-stay-productive.png" alt="" />
-      </section>
     </main>
 
-    <footer></footer>
+    <!-- Email Start -->
+    <section id="email">
+      <h2>Get early access today</h2>
 
-    <h2>Get early access today</h2>
+      <p>
+        It only takes a minute to sign up and our free starter tier is extremely
+        generous. If you have any questions, our support team would be happy to
+        help you.
+      </p>
 
-    <p>
-      It only takes a minute to sign up and our free starter tier is extremely
-      generous. If you have any questions, our support team would be happy to
-      help you.
-    </p>
-
-    <button>Get Started For Free</button>
-
-    <p>
-      <span><img src="./images/icon-location.svg" alt="location" /></span>
-
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua
-    </p>
-
-    <ul>
-      <li>
-        <img src="./images/icon-phone.svg" alt="contact" /> +1-543-123-4567
-      </li>
-      <li>
-        <img src="./images/icon-email.svg" alt="email" /> example@fylo.com
-      </li>
-    </ul>
-
-    <ul>
-      <li>About Us</li>
-      <li>Jobs</li>
-      <li>Press</li>
-      <li>Blog</li>
-    </ul>
-
-    <ul>
-      <li>Contact Us</li>
-      <li>Terms</li>
-
-      <li>Privacy</li>
-    </ul>
-
-    <ul>
-      <li><img src="" alt="facebook" /></li>
-      <li><img src="" alt="twitter" /></li>
-      <li><img src="" alt="instagram" /></li>
-    </ul>
+      <div>
+        <input type="email" placeholder="email@example.com" />
+        <button>Get Started For Free</button>
+      </div>
+    </section>
+    <!-- Email End -->
 
     <footer>
+      <img src="./images/logo.svg" alt="Logo" class="logo" />
+
+      <div class="wrapper">
+        <div>
+          <p>
+            <span><img src="./images/icon-location.svg" alt="location" /></span>
+
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua
+          </p>
+        </div>
+
+        <ul>
+          <li>
+            <img src="./images/icon-phone.svg" alt="contact" /> +1-543-123-4567
+          </li>
+
+          <li>
+            <img src="./images/icon-email.svg" alt="email" /> example@fylo.com
+          </li>
+        </ul>
+
+        <ul>
+          <li>About Us</li>
+          <li>Jobs</li>
+          <li>Press</li>
+          <li>Blog</li>
+        </ul>
+
+        <ul>
+          <li>Contact Us</li>
+          <li>Terms</li>
+
+          <li>Privacy</li>
+        </ul>
+
+        <ul class="social">
+          <li><i class="fa-brands fa-facebook-f"></i></li>
+          <li><i class="fa-brands fa-twitter"></i></li>
+          <li><i class="fa-brands fa-instagram"></i></li>
+        </ul>
+      </div>
+
       <p class="attribution">
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
           >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
+        >. Coded by <a href="https://jatinporiya.epizy.com">Jatin Poriya</a>.
       </p>
     </footer>
   </body>
