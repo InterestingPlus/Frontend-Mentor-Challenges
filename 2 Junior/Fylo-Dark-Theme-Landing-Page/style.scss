@@ -10,29 +10,38 @@
 
   --White: hsl(0, 0%, 100%);
   --Nav-Text: hsla(0, 0%, 78%, 0.837);
+  --Para-Text: hsla(0, 0%, 85%, 0.95);
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   transition: 0.1s all;
+  font-family: "Raleway", serif;
 }
 
 body {
   color: var(--White);
-  background: var(--main-background);
+  background: var(--email-sign-up);
+
+  overflow-x: hidden;
 }
 
 /* Header Start */
 header {
   display: flex;
+
   width: 100vw;
+  max-height: 100px;
 
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     padding: 2rem;
     padding-inline: 2.5rem;
     width: 100%;
@@ -55,30 +64,29 @@ header {
 
 /* Header End */
 
-
-
 // Main Start
 
 main {
   width: 100vw;
-
 
   // Section Start
   section {
     width: 100%;
     padding: 2rem;
 
-
-
     // Home Start
     &#home {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 1.1rem;
 
-      min-height: 100dvh;
+      height: calc(100dvh - 100px);
       align-items: center;
       text-align: center;
+
+      position: relative;
+      z-index: 1;
+      padding-bottom: 7rem;
 
       img {
         height: 50%;
@@ -86,30 +94,119 @@ main {
       }
 
       h1 {
-        max-width: 400px;
+        max-width: 500px;
       }
 
       p {
-        max-width: 380px;
+        color: var(--Para-Text);
+        font-weight: 400;
+        font-size: 0.8rem;
+        line-height: 20px;
+        max-width: 370px;
       }
 
       button {
         color: var(--White);
-        background: linear-gradient(to right, var(--Cyan-gradient), var(--Blue--gradient));
+        background: linear-gradient(
+          to right,
+          var(--Cyan-gradient),
+          var(--Blue--gradient)
+        );
+        font-size: 0.6rem;
+        font-weight: 400;
 
         border-radius: 20px;
-        padding: .3rem 2rem;
+        padding: 0.6rem 3rem;
         border: none;
+
+        &:hover {
+          background: red;
+        }
       }
-
     }
-
     // Home End
 
+    // Features Start
+    &#features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      background: var(--main-background);
+      position: relative;
+      padding-top: 0;
+
+      div {
+        width: 100%;
+        padding: 2rem;
+        padding-inline: 3rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.7rem;
+
+        p {
+          color: var(--Para-Text);
+          font-weight: 400;
+          font-size: 0.8rem;
+          line-height: 20px;
+          max-width: 350px;
+        }
+
+        &:first-child,
+        &:nth-child(2) {
+          padding-top: 0;
+        }
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 500px;
+        background: url("./images/bg-curvy-desktop.svg");
+        background-size: 100vw;
+        background-position: bottom;
+        background-repeat: no-repeat;
+
+        transform: translateY(-100%);
+        z-index: 0;
+      }
+    }
+    // Features End
+
+    // About Start
+    &#about {
+      display: flex;
+      gap: 1rem;
+
+      img {
+        width: 45vw;
+        max-height: 100%;
+        object-fit: contain;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        p {
+          color: var(--Para-Text);
+          font-weight: 400;
+          font-size: 0.8rem;
+          line-height: 15px;
+        }
+      }
+    }
+    // About End
   }
 
   // Section End
-
 }
 
 // Main End
