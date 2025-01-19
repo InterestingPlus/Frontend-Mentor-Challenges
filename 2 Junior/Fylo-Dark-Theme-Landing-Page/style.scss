@@ -495,6 +495,8 @@ footer {
     font-size: 0.8rem;
     line-height: 20px;
 
+    max-width: 300px;
+
     display: flex;
     gap: 1rem;
     cursor: pointer;
@@ -503,6 +505,9 @@ footer {
   .wrapper {
     display: flex;
     gap: 2.5rem;
+    width: 100%;
+
+    justify-content: space-between;
   }
 
   ul {
@@ -584,15 +589,68 @@ footer {
 
 @media screen and (width < 750px) {
 
+  header {
+    nav {
+      padding-inline: 2rem;
+
+      ul {
+        li {
+          font-size: .8rem;
+          white-space: nowrap;
+        }
+      }
+    }
+
+
+  }
+
   main section {
     padding: 2rem !important;
 
+    &#home {
+      button {
+        font-size: .8rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        padding-block: 1rem;
+        border-radius: 50px;
+        margin-top: 1rem;
+
+        width: 80%;
+      }
+    }
+
     &#features {
       grid-template-columns: 1fr;
+      padding-inline: 1.5rem;
 
+      div {
+        padding-inline: 1rem;
+        margin-top: 2rem;
+      }
+
+      &::before {
+        height: 300px;
+        background: url("./images/bg-curvy-mobile.svg");
+        background-size: 100vw;
+        background-position: top;
+        background-repeat: no-repeat;
+      }
 
       &:after {
-        background: url("./images/bg-curvy-mobile.svg");
+        content: '';
+        position: absolute;
+
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 140px;
+
+        background: var(--main-background);
+
+
+        transform: translateY(-100%);
+        z-index: 0;
       }
     }
 
@@ -618,15 +676,47 @@ footer {
 
 
     div {
-      gap: .5rem;
+      flex-direction: column;
+      gap: 1rem;
+
 
       input {
-        width: 65%;
+        width: 100%;
+        padding: 1rem 1.5rem;
+        border-radius: 50px;
       }
 
       button {
-        min-width: 35%;
+        min-width: 100% !important;
+        font-size: .7rem;
+        font-weight: 700;
+        letter-spacing: 1px;
       }
+    }
+  }
+
+
+  footer {
+
+    padding-inline: 1.5rem;
+    padding-top: 15rem;
+
+    img.logo {
+      width: 170px;
+    }
+
+    p {
+      gap: 1rem;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    ul.social {
+      display: flex;
+      justify-content: center;
     }
   }
 

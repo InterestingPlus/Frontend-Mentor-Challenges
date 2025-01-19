@@ -365,6 +365,7 @@ footer p {
   font-weight: 400;
   font-size: 0.8rem;
   line-height: 20px;
+  max-width: 300px;
   display: flex;
   gap: 1rem;
   cursor: pointer;
@@ -372,6 +373,8 @@ footer p {
 footer .wrapper {
   display: flex;
   gap: 2.5rem;
+  width: 100%;
+  justify-content: space-between;
 }
 footer ul {
   list-style: none;
@@ -426,14 +429,50 @@ footer .attribution a {
 }
 
 @media screen and (width < 750px) {
+  header nav {
+    padding-inline: 2rem;
+  }
+  header nav ul li {
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
   main section {
     padding: 2rem !important;
   }
+  main section#home button {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-block: 1rem;
+    border-radius: 50px;
+    margin-top: 1rem;
+    width: 80%;
+  }
   main section#features {
     grid-template-columns: 1fr;
+    padding-inline: 1.5rem;
+  }
+  main section#features div {
+    padding-inline: 1rem;
+    margin-top: 2rem;
+  }
+  main section#features::before {
+    height: 300px;
+    background: url("./images/bg-curvy-mobile.svg");
+    background-size: 100vw;
+    background-position: top;
+    background-repeat: no-repeat;
   }
   main section#features:after {
-    background: url("./images/bg-curvy-mobile.svg");
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 140px;
+    background: var(--main-background);
+    transform: translateY(-100%);
+    z-index: 0;
   }
   main section#about {
     flex-direction: column;
@@ -450,12 +489,36 @@ footer .attribution a {
     max-width: 90vw;
   }
   section#email div {
-    gap: 0.5rem;
+    flex-direction: column;
+    gap: 1rem;
   }
   section#email div input {
-    width: 65%;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: 50px;
   }
   section#email div button {
-    min-width: 35%;
+    min-width: 100% !important;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  footer {
+    padding-inline: 1.5rem;
+    padding-top: 15rem;
+  }
+  footer img.logo {
+    width: 170px;
+  }
+  footer p {
+    gap: 1rem;
+  }
+  footer .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  footer ul.social {
+    display: flex;
+    justify-content: center;
   }
 }/*# sourceMappingURL=style.css.map */
