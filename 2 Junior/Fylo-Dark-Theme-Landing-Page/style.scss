@@ -589,6 +589,10 @@ footer {
 
 @media screen and (width < 750px) {
 
+  body {
+    overflow-x: hidden;
+  }
+
   header {
     nav {
       padding-inline: 2rem;
@@ -717,6 +721,16 @@ footer {
     ul.social {
       display: flex;
       justify-content: center;
+    }
+
+    p.attribution {
+      text-align: center;
+      display: flex;
+
+      position: relative;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
     }
   }
 
