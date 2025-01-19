@@ -1,0 +1,115 @@
+:root {
+  --email-sign-up: hsl(217, 28%, 15%);
+  --main-background: hsl(218, 28%, 13%);
+  --footer-background: hsl(216, 53%, 9%);
+  --testimonials-background: hsl(219, 30%, 18%);
+
+  --Cyan-gradient: hsl(176, 68%, 64%);
+  --Blue--gradient: hsl(198, 60%, 50%);
+  --Light-Red-error: hsl(0, 100%, 63%);
+
+  --White: hsl(0, 0%, 100%);
+  --Nav-Text: hsla(0, 0%, 78%, 0.837);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.1s all;
+}
+
+body {
+  color: var(--White);
+  background: var(--main-background);
+}
+
+/* Header Start */
+header {
+  display: flex;
+  width: 100vw;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    padding-inline: 2.5rem;
+    width: 100%;
+
+    img {
+      width: 100px;
+    }
+
+    ul {
+      display: flex;
+      gap: 1rem;
+      color: var(--Nav-Text);
+
+      li {
+        list-style: none;
+      }
+    }
+  }
+}
+
+/* Header End */
+
+
+
+// Main Start
+
+main {
+  width: 100vw;
+
+
+  // Section Start
+  section {
+    width: 100%;
+    padding: 2rem;
+
+
+
+    // Home Start
+    &#home {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      min-height: 100dvh;
+      align-items: center;
+      text-align: center;
+
+      img {
+        height: 50%;
+        max-height: 350px;
+      }
+
+      h1 {
+        max-width: 400px;
+      }
+
+      p {
+        max-width: 380px;
+      }
+
+      button {
+        color: var(--White);
+        background: linear-gradient(to right, var(--Cyan-gradient), var(--Blue--gradient));
+
+        border-radius: 20px;
+        padding: .3rem 2rem;
+        border: none;
+      }
+
+    }
+
+    // Home End
+
+  }
+
+  // Section End
+
+}
+
+// Main End
