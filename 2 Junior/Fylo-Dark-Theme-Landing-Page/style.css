@@ -17,7 +17,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: 0.1s all;
   font-family: "Raleway", serif;
 }
 
@@ -98,7 +97,6 @@ main section#home {
 }
 main section#home img {
   height: 50%;
-  max-height: 350px;
 }
 main section#home h1 {
   max-width: 500px;
@@ -531,5 +529,220 @@ footer .attribution a {
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
+  }
+}
+@media screen and (width > 750px) {
+  header {
+    padding: 2.5rem;
+    min-height: 200px;
+  }
+  header nav img {
+    width: 175px;
+  }
+  header nav ul {
+    gap: 3.6rem;
+  }
+  header nav ul li {
+    font-size: 1rem;
+  }
+  main section#home {
+    height: auto;
+    min-height: calc(100dvh - 200px);
+    padding-top: 0rem;
+  }
+  main section#home img {
+    height: auto;
+    width: 50vw;
+    aspect-ratio: 720/534;
+  }
+  main section#home h1 {
+    margin-top: 1.25rem;
+    font-size: 2.5rem;
+    max-width: 720px;
+    line-height: 3.7rem;
+  }
+  main section#home p {
+    margin-top: 1rem;
+    font-size: 1.28rem;
+    max-width: 600px;
+    line-height: 1.9rem;
+  }
+  main section#home button {
+    margin-top: 0.8rem;
+    padding: 1rem 5.5rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+  }
+  main section#features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
+    padding-top: 3.8rem;
+    gap: 5rem;
+    row-gap: 4rem;
+  }
+  main section#features div {
+    max-width: 440px;
+    padding: 2rem;
+    padding-top: 0;
+  }
+  main section#features div h3 {
+    margin-top: 1rem;
+    font-size: 1.3rem;
+  }
+  main section#features div p {
+    font-size: 0.9rem;
+    max-width: 350px;
+  }
+  main section#features div:nth-child(1) img {
+    height: 80px;
+  }
+  main section#features div:nth-child(2) {
+    position: relative;
+    transform: translateX(-10px);
+  }
+  main section#features div:nth-child(2) img {
+    height: 80px;
+  }
+  main section#features div:nth-child(2) p {
+    max-width: 450px;
+  }
+  main section#features div:nth-child(3) img {
+    height: 68px;
+    margin-bottom: 2px;
+  }
+  main section#features div:nth-child(4) img {
+    height: 65px;
+    margin-bottom: 5px;
+  }
+  main section#about {
+    padding: 1rem;
+    padding-top: 5rem;
+    gap: 2.8rem;
+    max-width: 88%;
+  }
+  main section#about .hero-img {
+    width: 53% !important;
+  }
+  main section#about .hero-img img {
+    position: relative;
+    transform: translateY(-10px);
+  }
+  main section#about .content {
+    width: 47% !important;
+  }
+  main section#about .content h2 {
+    font-size: 2.53rem;
+    margin-bottom: 0.5rem;
+  }
+  main section#about .content p {
+    font-size: 1rem !important;
+    line-height: 1.5rem !important;
+  }
+  main section#about .content a {
+    position: relative;
+    transform: translateY(10px);
+  }
+  main section#reviews {
+    padding: 1rem;
+    padding-top: 8.5rem;
+    gap: 2.5rem;
+  }
+  main section#reviews .review {
+    max-width: 360px;
+    padding-inline: 1.6rem;
+    padding-top: 2.7rem;
+  }
+  main section#reviews .review p {
+    font-size: 0.96rem;
+    line-height: 1.35rem;
+  }
+  main section#reviews .review div {
+    margin-top: 0.3rem;
+  }
+  main section#reviews .review div img {
+    width: 24px;
+    position: relative;
+    transform: translateY(-5px);
+  }
+  main section#reviews .review div span p {
+    font-size: 0.55rem;
+  }
+  main section#reviews .review:nth-child(1):after {
+    width: 3.5rem;
+    height: 3.5rem;
+    top: -2rem;
+  }
+  section#email {
+    max-width: 860px;
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    gap: 1.2rem;
+  }
+  section#email h2 {
+    font-size: 2.03rem;
+    margin-bottom: 0.2rem;
+  }
+  section#email p {
+    max-width: 80%;
+    font-size: 0.9rem;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  section#email div {
+    margin-top: 1.2rem;
+    max-width: 89%;
+    gap: 1.6rem;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  section#email div input {
+    width: 70.5%;
+    border-radius: 50px;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+  section#email div button {
+    width: 29.5%;
+    padding: 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  footer {
+    margin-top: 1rem;
+    padding-top: 13rem;
+    padding-left: 7.5rem;
+  }
+  footer img.logo {
+    width: 180px;
+  }
+  footer .wrapper {
+    margin-top: -0.1rem;
+  }
+  footer .wrapper div p {
+    gap: 1.8rem;
+    font-size: 1rem;
+    max-width: 400px;
+    line-height: 1.5rem;
+  }
+  footer .wrapper ul {
+    gap: 1.1rem;
+  }
+  footer .wrapper ul li {
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+  footer .wrapper ul.social li {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  footer .attribution {
+    font-size: 1rem;
+    white-space: nowrap;
   }
 }/*# sourceMappingURL=style.css.map */
