@@ -644,6 +644,12 @@ footer .attribution a {
     position: relative;
     transform: translateY(10px);
   }
+  main section#about .content::before {
+    display: none;
+  }
+  main section#about .content::after {
+    display: none;
+  }
   main section#reviews {
     padding: 1rem;
     padding-top: 8.5rem;
