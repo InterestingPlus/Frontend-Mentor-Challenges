@@ -17,14 +17,24 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: 0.1s all;
   font-family: "Raleway", serif;
-  transition: 0.2s all;
 }
 
 body {
   color: var(--White);
   background: var(--main-background);
   overflow-x: hidden;
+}
+
+header,
+main,
+main section,
+footer,
+body {
+  width: 100vw;
+  max-width: 100vw;
+  min-width: 100vw;
 }
 
 /* Header Start */
@@ -98,6 +108,7 @@ main section#home {
 }
 main section#home img {
   height: 50%;
+  max-width: 720px;
 }
 main section#home h1 {
   max-width: 500px;
@@ -178,6 +189,7 @@ main section#about div.hero-img {
   width: 48%;
   height: 100%;
   max-height: 100%;
+  max-width: 615px;
 }
 main section#about div.hero-img img {
   width: 100%;
@@ -214,20 +226,6 @@ main section#about div.content a:after {
   width: 100%;
   height: 1px;
   background: var(--Link);
-}
-main section#about:after, main section#about::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: var(--main-background);
-  top: 0;
-}
-main section#about:before {
-  left: -100%;
-}
-main section#about:after {
-  right: -100%;
 }
 main section#reviews {
   display: flex;
@@ -291,7 +289,7 @@ main section#reviews .review:first-child::after {
   z-index: 0;
 }
 
-section#email {
+div#email {
   max-width: 500px;
   background: var(--email-sign-up);
   z-index: 1;
@@ -306,31 +304,51 @@ section#email {
   border-radius: 5px;
   box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.3411764706);
 }
-section#email p {
+div#email p {
   color: var(--Para-Text);
   font-weight: 400;
   font-size: 0.8rem;
   line-height: 20px;
 }
-section#email div {
+div#email form {
   display: flex;
   justify-content: center;
   gap: 1rem;
   width: 100%;
 }
-section#email div input {
+div#email form div {
+  position: relative;
   width: 70%;
+}
+div#email form input {
+  width: 100%;
   font-size: 0.6rem;
   font-weight: 400;
   border-radius: 20px;
   padding: 0.6rem;
   border: none;
+  position: relative;
 }
-section#email div input:focus {
+div#email form input:focus {
   outline: none;
   background: var(--Para-Text);
 }
-section#email div button {
+div#email form #error-text {
+  position: absolute;
+  bottom: -50%;
+  left: 2rem;
+  font-size: 0.8rem;
+  color: var(--Light-Red-error);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+div#email form.err {
+  padding-bottom: 1rem;
+}
+div#email form.err #error-text {
+  opacity: 1;
+}
+div#email form button {
   width: 30%;
   max-width: 30%;
   white-space: nowrap;
@@ -343,7 +361,7 @@ section#email div button {
   border: none;
   cursor: pointer;
 }
-section#email div button:hover {
+div#email form button:hover {
   background: var(--Cyan-gradient);
 }
 
@@ -427,6 +445,11 @@ footer .attribution a {
   color: var(--Link);
 }
 
+@media screen and (width < 1050px) {
+  footer .wrapper {
+    flex-wrap: wrap;
+  }
+}
 @media screen and (width < 750px) {
   body {
     overflow-x: hidden;
@@ -440,6 +463,10 @@ footer .attribution a {
   }
   main section {
     padding: 2rem !important;
+  }
+  main section#home img {
+    max-width: 90vw;
+    height: auto;
   }
   main section#home button {
     font-size: 0.8rem;
@@ -482,28 +509,39 @@ footer .attribution a {
   main section#about .hero-img {
     width: 100% !important;
     padding-top: 5em;
+    max-width: 90vw;
+    height: auto;
   }
   main section#about .content {
     width: 100% !important;
     padding-bottom: 10rem;
   }
-  section#email {
+  div#email {
     max-width: 90vw;
   }
-  section#email div {
+  div#email form {
     flex-direction: column;
     gap: 1rem;
   }
-  section#email div input {
+  div#email form div {
     width: 100%;
-    padding: 1rem 1.5rem;
-    border-radius: 50px;
   }
-  section#email div button {
+  div#email form input {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 50px;
+    position: relative;
+  }
+  div#email form button {
     min-width: 100% !important;
+    padding: 0.8rem;
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 1px;
+    border-radius: 50px;
+  }
+  div#email form.err button {
+    margin-top: 1rem;
   }
   footer {
     padding-inline: 1.5rem;
@@ -588,7 +626,7 @@ footer .attribution a {
     padding: 2rem;
     padding-top: 0;
   }
-  main section#features div h3 {
+  main section#features div h2 {
     margin-top: 1rem;
     font-size: 1.3rem;
   }
@@ -622,6 +660,7 @@ footer .attribution a {
     padding-top: 5rem;
     gap: 2.8rem;
     max-width: 88%;
+    justify-content: center;
   }
   main section#about .hero-img {
     width: 53% !important;
@@ -644,12 +683,6 @@ footer .attribution a {
   main section#about .content a {
     position: relative;
     transform: translateY(10px);
-  }
-  main section#about .content::before {
-    display: none;
-  }
-  main section#about .content::after {
-    display: none;
   }
   main section#reviews {
     padding: 1rem;
@@ -681,24 +714,24 @@ footer .attribution a {
     height: 3.5rem;
     top: -2rem;
   }
-  section#email {
+  div#email {
     max-width: 860px;
     margin-top: 3rem;
     padding-top: 2.5rem;
     gap: 1.2rem;
   }
-  section#email h2 {
+  div#email h2 {
     font-size: 2.03rem;
     margin-bottom: 0.2rem;
   }
-  section#email p {
+  div#email p {
     max-width: 80%;
     font-size: 0.9rem;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
   }
-  section#email div {
+  div#email form {
     margin-top: 1.2rem;
     max-width: 89%;
     gap: 1.6rem;
@@ -706,13 +739,17 @@ footer .attribution a {
     left: 50%;
     transform: translateX(-50%);
   }
-  section#email div input {
+  div#email form div {
     width: 70.5%;
+  }
+  div#email form input {
+    width: 100%;
     border-radius: 50px;
     padding: 1rem;
+    padding-inline: 2rem;
     font-size: 0.9rem;
   }
-  section#email div button {
+  div#email form button {
     width: 29.5%;
     padding: 1rem;
     border-radius: 50px;

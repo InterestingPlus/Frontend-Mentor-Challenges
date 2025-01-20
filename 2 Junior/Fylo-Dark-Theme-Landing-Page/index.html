@@ -37,6 +37,7 @@
     </style>
   </head>
   <body>
+    <!-- Webpage Start -->
     <header>
       <nav>
         <img src="./images/logo.svg" alt="Logo" />
@@ -65,7 +66,7 @@
       <section id="features">
         <div>
           <img src="./images/icon-access-anywhere.svg" alt="Icons" />
-          <h3>Access your files, anywhere</h3>
+          <h2>Access your files, anywhere</h2>
           <p>
             The ability to use a smartphone, tablet, or computer to access your
             account means your files follow you everywhere.
@@ -74,7 +75,7 @@
 
         <div>
           <img src="./images/icon-security.svg" alt="Icons" />
-          <h3>Security you can trust</h3>
+          <h2>Security you can trust</h2>
           <p>
             2-factor authentication and user-controlled encryption are just a
             couple of the security features we allow to help secure your files.
@@ -83,7 +84,7 @@
 
         <div>
           <img src="./images/icon-collaboration.svg" alt="Icons" />
-          <h3>Real-time collaboration</h3>
+          <h2>Real-time collaboration</h2>
           <p>
             Securely share files and folders with friends, family and colleagues
             for live collaboration. No email attachments required.
@@ -92,7 +93,7 @@
 
         <div>
           <img src="./images/icon-any-file.svg" alt="Icons" />
-          <h3>Store any type of file</h3>
+          <h2>Store any type of file</h2>
           <p>
             Whether you're sharing holidays photos or work documents, Fylo has
             you covered allowing for all file types to be securely stored and
@@ -184,7 +185,7 @@
     </main>
 
     <!-- Email Start -->
-    <section id="email">
+    <div id="email">
       <h2>Get early access today</h2>
 
       <p>
@@ -193,11 +194,20 @@
         help you.
       </p>
 
-      <div>
-        <input type="email" placeholder="email@example.com" />
-        <button>Get Started For Free</button>
-      </div>
-    </section>
+      <form id="form" novalidate>
+        <div>
+          <input
+            type="email"
+            placeholder="email@example.com"
+            id="email"
+            required
+          />
+          <span id="error-text">Please enter a valid email address</span>
+        </div>
+
+        <button type="submit">Get Started For Free</button>
+      </form>
+    </div>
     <!-- Email End -->
 
     <footer>
@@ -215,11 +225,13 @@
 
         <ul>
           <li>
-            <img src="./images/icon-phone.svg" alt="contact" /> +1-543-123-4567
+            <img src="./images/icon-phone.svg" alt="contact" />
+            +1-543-123-4567
           </li>
 
           <li>
-            <img src="./images/icon-email.svg" alt="email" /> example@fylo.com
+            <img src="./images/icon-email.svg" alt="email" />
+            example@fylo.com
           </li>
         </ul>
 
@@ -251,5 +263,29 @@
         >. Coded by <a href="https://jatinporiya.epizy.com">Jatin Poriya</a>.
       </p>
     </footer>
+    <!-- Webpage End -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let email = document.querySelector("input#email");
+        let errorText = document.getElementById("error-text");
+        let form = document.getElementById("form");
+
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          // Check for invalid email
+          if (email.validity.typeMismatch || email.value.trim() === "") {
+            form.classList.add("err");
+            errorText.style.opacity = "1";
+          } else {
+            form.classList.remove("err");
+            errorText.style.opacity = "0";
+            email.value = "";
+            alert("Submitted successfully!");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
