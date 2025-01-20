@@ -196,12 +196,7 @@
 
       <form id="form" novalidate>
         <div>
-          <input
-            type="email"
-            placeholder="email@example.com"
-            id="email"
-            required
-          />
+          <input type="email" placeholder="email@example.com" required />
           <span id="error-text">Please enter a valid email address</span>
         </div>
 
@@ -267,7 +262,7 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        let email = document.querySelector("input#email");
+        let email = document.querySelector("input");
         let errorText = document.getElementById("error-text");
         let form = document.getElementById("form");
 
