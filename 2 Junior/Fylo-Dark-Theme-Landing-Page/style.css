@@ -98,6 +98,7 @@ main section#home {
 }
 main section#home img {
   height: 50%;
+  max-height: 350px;
 }
 main section#home h1 {
   max-width: 500px;
@@ -530,91 +531,5 @@ footer .attribution a {
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-  }
-}
-@media screen and (width > 750px) {
-  header {
-    padding: 2.5rem;
-    min-height: 200px;
-  }
-  header nav img {
-    width: 175px;
-  }
-  header nav ul {
-    gap: 3.6rem;
-  }
-  header nav ul li {
-    font-size: 1rem;
-  }
-  main section#home {
-    height: auto;
-    min-height: calc(100dvh - 200px);
-    padding-top: 0rem;
-  }
-  main section#home img {
-    height: auto;
-    width: 50vw;
-    aspect-ratio: 720/534;
-  }
-  main section#home h1 {
-    margin-top: 1.25rem;
-    font-size: 2.5rem;
-    max-width: 720px;
-    line-height: 3.7rem;
-  }
-  main section#home p {
-    margin-top: 1rem;
-    font-size: 1.28rem;
-    max-width: 600px;
-    line-height: 1.9rem;
-  }
-  main section#home button {
-    margin-top: 0.8rem;
-    padding: 1rem 5.5rem;
-    font-size: 1.2rem;
-    border-radius: 50px;
-  }
-  main section#features {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 2rem;
-    padding-top: 3.8rem;
-    gap: 5rem;
-    row-gap: 4rem;
-  }
-  main section#features div {
-    max-width: 440px;
-    padding: 2rem;
-    padding-top: 0;
-  }
-  main section#features div h3 {
-    margin-top: 1rem;
-    font-size: 1.3rem;
-  }
-  main section#features div p {
-    font-size: 0.9rem;
-    max-width: 350px;
-  }
-  main section#features div:nth-child(1) img {
-    height: 80px;
-  }
-  main section#features div:nth-child(2) {
-    position: relative;
-    transform: translateX(-10px);
-  }
-  main section#features div:nth-child(2) img {
-    height: 80px;
-  }
-  main section#features div:nth-child(2) p {
-    max-width: 450px;
-  }
-  main section#features div:nth-child(3) img {
-    height: 68px;
-    margin-bottom: 2px;
-  }
-  main section#features div:nth-child(4) img {
-    height: 65px;
-    margin-bottom: 5px;
   }
 }/*# sourceMappingURL=style.css.map */
