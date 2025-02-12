@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+    <!-- Score
+  Rules
+
+  You Picked
+  The House Picked
+
+  You Winf
+  You Lose
+
+  Play Again -->
+  </head>
+
+  <body>
+    <nav>
+      <img src="./images/logo.svg" alt="" class="logo" />
+
+      <button class="score">
+        Score
+        <span> 12 </span>
+      </button>
+    </nav>
+
+    <main>
+      <section id="action">
+        <img src="./images/bg-triangle.svg" alt="bg-triangle" id="bg-pattern" />
+
+        <button class="action" id="paper">
+          <img src="./images/icon-paper.svg" alt="Paper" />
+        </button>
+        <button class="action" id="scissor">
+          <img src="./images/icon-scissors.svg" alt="Scissor" />
+        </button>
+        <button class="action" id="rock">
+          <img src="./images/icon-rock.svg" alt="Rock" />
+        </button>
+
+        <button id="rules">Rules</button>
+
+        <button class="house">
+          <img src="./images/icon-rock.svg" alt="Rock" />
+        </button>
+      </section>
+
+      <section id="rules" class="hide">
+        <div class="wrapper">
+          <div class="header">
+            <h1>Rules</h1>
+            <img src="./images/icon-close.svg" alt="Close-Icon" id="close" />
+          </div>
+
+          <img src="./images/image-rules.svg" alt="Rules" class="rules-img" />
+        </div>
+        <div class="close-rules"></div>
+      </section>
+    </main>
+
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
