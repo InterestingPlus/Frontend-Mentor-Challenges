@@ -9,6 +9,7 @@ let scoreIndicator = document.querySelector(".score span");
 scoreIndicator.innerText = score;
 
 document.querySelector("button.score").addEventListener("click", () => {
+  sound_click.currentTime = 0;
   sound_click.play();
   score = 0;
   scoreIndicator.innerText = score;
@@ -20,12 +21,32 @@ let sound_tie = new Audio("sounds/tie.mp3");
 let sound_lose = new Audio("sounds/lose.mp3");
 let sound_win = new Audio("sounds/win.mp3");
 let sound_rules = new Audio("sounds/rules.mp3");
+
 let background_music = new Audio("sounds/background.mp3");
 background_music.loop = true;
 background_music.volume = 0.3;
+background_music.preload = "auto";
+
+const preloadAudio = (audio) => {
+  audio.volume = 0;
+  audio
+    .play()
+    .then(() => {
+      audio.pause();
+      audio.volume = 1;
+    })
+    .catch((err) => console.log("Autoplay blocked:", err));
+};
 
 // Play the audio after user interaction (required for some browsers)
 document.addEventListener("DOMContentLoaded", () => {
+  // Run this when the page loads
+  preloadAudio(sound_click);
+  preloadAudio(sound_tie);
+  preloadAudio(sound_lose);
+  preloadAudio(sound_win);
+  preloadAudio(sound_rules);
+
   background_music
     .play()
     .catch((error) => console.log("Autoplay blocked:", error));
@@ -49,6 +70,7 @@ let userSelected;
 
 actionBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
+    sound_click.currentTime = 0;
     sound_click.play();
 
     userSelected = btn;
@@ -129,6 +151,7 @@ function checkWinner(user, computer) {
 
   if (user == computer) {
     result = "Tie";
+    sound_tie.currentTime = 0;
     sound_tie.play();
   } else if (user == "paper" && computer == "scissor") {
     result = "You Lose";
@@ -147,11 +170,15 @@ function checkWinner(user, computer) {
   }
 
   if (result.toLowerCase() == "you win") {
+    sound_win.currentTime = 0;
     sound_win.play();
+
     scoreIndicator.innerText = ++score;
     userSelected.classList.add("winner");
   } else if (result.toLowerCase() == "you lose") {
     houseBtn.classList.add("winner");
+
+    sound_lose.currentTime = 0;
     sound_lose.play();
   }
 
@@ -160,6 +187,7 @@ function checkWinner(user, computer) {
 }
 
 document.querySelector("button#reset").addEventListener("click", () => {
+  sound_click.currentTime = 0;
   sound_click.play();
   reset();
 });
@@ -224,3 +252,15 @@ function reset() {
   userSelected.classList.remove("winner");
   houseBtn.classList.remove("winner");
 }
+
+const musicToggle = document.querySelector("#toggleMusic");
+
+musicToggle.addEventListener("click", () => {
+  if (background_music.paused) {
+    background_music.play();
+    musicToggle.textContent = "🔊 Mute Music";
+  } else {
+    background_music.pause();
+    musicToggle.textContent = "🔇 Play Music";
+  }
+});
