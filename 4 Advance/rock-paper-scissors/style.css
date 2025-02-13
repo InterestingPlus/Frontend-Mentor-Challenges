@@ -25,9 +25,12 @@
   padding: 0;
   box-sizing: border-box;
 
-  transition: 0.2s all;
+  transition: 0.2s all ease-in-out;
   font-family: "Barlow Semi Condensed", serif;
+
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
 }
 
 body {
@@ -427,20 +430,6 @@ button.house.winner span {
   animation: winner 1.5s linear alternate;
   animation-delay: 0.6s;
 }
-
-/* 0% {
-  box-shadow: 0 0 0 0 #ffffff30;
-}
-34% {
-  box-shadow: 0 0 0 5vmin #ffffff30;
-}
-68% {
-  box-shadow: 0 0 0 5vmin #ffffff30, 0 0 0 10vmin #ffffff30;
-}
-100% {
-  box-shadow: 0 0 0 5vmin #ffffff30, 0 0 0 10vmin #ffffff30,
-    0 0 0 15vmin #ffffff30;
-} */
 
 @keyframes winner {
   0% {

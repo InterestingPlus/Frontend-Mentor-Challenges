@@ -20,6 +20,16 @@ let sound_tie = new Audio("sounds/tie.mp3");
 let sound_lose = new Audio("sounds/lose.mp3");
 let sound_win = new Audio("sounds/win.mp3");
 let sound_rules = new Audio("sounds/rules.mp3");
+let background_music = new Audio("sounds/background.mp3");
+background_music.loop = true;
+background_music.volume = 0.3;
+
+// Play the audio after user interaction (required for some browsers)
+document.addEventListener("DOMContentLoaded", () => {
+  background_music
+    .play()
+    .catch((error) => console.log("Autoplay blocked:", error));
+});
 
 openRules.addEventListener("click", () => {
   sound_rules.play();
@@ -142,6 +152,7 @@ function checkWinner(user, computer) {
     userSelected.classList.add("winner");
   } else if (result.toLowerCase() == "you lose") {
     houseBtn.classList.add("winner");
+    sound_lose.play();
   }
 
   winnerPopup.querySelector("h2").innerText = result;
