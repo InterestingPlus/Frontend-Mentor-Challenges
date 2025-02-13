@@ -115,11 +115,16 @@ main section#action button.action {
   justify-content: center;
 
   box-sizing: content-box;
-  border: 2vmin solid #ff0;
+  border: 3vmin solid #ff0;
   cursor: pointer;
 }
+main section#action button.action:disabled {
+  background: #fff;
+}
+
 main section#action button img {
   width: 10vmin;
+  transition: 0s;
 }
 main section#action button#paper {
   top: -10vmin;
@@ -143,7 +148,7 @@ main section#action button#rules {
   bottom: 3vmin;
   right: 2.4vmin;
 
-  cursor: pointer;
+  cursor: help;
   color: #fff;
   background: transparent;
   border: 2px solid var(--Header-Outline);
@@ -250,15 +255,75 @@ main section#action button.house {
   align-items: center;
   justify-content: center;
 
-  box-sizing: content-box;
-  border: 2vmin solid #ff0;
-  cursor: pointer;
+  box-sizing: border-box;
+  border: 3vmin solid rgba(49, 49, 11, 0);
+  background: #00000039;
+  cursor: wait;
 
   top: 10%;
-  right: -30%;
+  right: -5%;
+  transform: translateY(3vmin);
   scale: 0;
 }
+main section#action button.house::before,
+main section#action button.action.show::before {
+  content: "You Picked";
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 2.5vmin;
+  color: #fff;
+
+  top: -70%;
+  position: absolute;
+  text-wrap: nowrap;
+}
+main section#action button.house::before {
+  content: "The House Picked";
+  top: -125%;
+}
+main section#action button.house.show::before {
+  top: -70%;
+}
 /* House */
+
+/* Winner Popup Start */
+.winner-popup {
+  position: absolute;
+  top: 20%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  scale: 1;
+}
+.winner-popup h2 {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 5.05vmin;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.winner-popup button {
+  padding: 1.5vmin 5vmin;
+  border-radius: 1vmin;
+  font-size: 2vmin;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(200, 2, 2, 0.816);
+  margin-top: 2vmin;
+  font-weight: 700;
+
+  border: none;
+  cursor: pointer;
+}
+.winner-popup.hide {
+  scale: 0;
+}
+/* Winner Popup End */
 
 @keyframes popup {
   from {
