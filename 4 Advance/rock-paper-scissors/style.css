@@ -15,6 +15,7 @@
   --Dark-Text: hsl(229, 25%, 31%);
   --Score-Text: hsl(229, 64%, 46%);
   --Header-Outline: hsl(217, 16%, 45%);
+  --Animation: #ffffff12;
 
   --Backgroud-Gradient: hsl(214, 47%, 23%), hsl(237, 49%, 15%);
 }
@@ -68,6 +69,7 @@ nav button.score {
   padding: 1rem;
   height: 4rem;
   width: 5rem;
+  cursor: pointer;
 
   display: flex;
   flex-direction: column;
@@ -258,12 +260,15 @@ main section#action button.house {
   box-sizing: border-box;
   border: 3vmin solid rgba(49, 49, 11, 0);
   background: #00000039;
-  cursor: wait;
+  cursor: progress;
 
   top: 10%;
   right: -5%;
   transform: translateY(3vmin);
   scale: 0;
+}
+main section#action button.house.animate {
+  animation: house 1.5s linear alternate;
 }
 main section#action button.house::before,
 main section#action button.action.show::before {
@@ -283,8 +288,47 @@ main section#action button.house::before {
   content: "The House Picked";
   top: -125%;
 }
+main section#action button.house.animate::before {
+  animation: house-reverse 1.5s linear alternate;
+}
 main section#action button.house.show::before {
   top: -70%;
+}
+@keyframes house {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(1vmin);
+  }
+  40% {
+    transform: translateY(-1vmin);
+  }
+  60% {
+    transform: translateY(1vmin);
+  }
+  80% {
+    transform: translateY(-1vmin);
+  }
+}
+@keyframes house-reverse {
+  0%,
+  100% {
+    top: -125%;
+  }
+  20% {
+    top: calc(-100% - 1vmin);
+  }
+  40% {
+    top: calc(-100% + 1vmin);
+  }
+  60% {
+    top: calc(-100% - 1vmin);
+  }
+  80% {
+    top: calc(-100% + 1vmin);
+  }
 }
 /* House */
 
@@ -349,3 +393,63 @@ main section#action button.house.show::before {
   }
 }
 /* Rules End */
+
+/* Winner Animation */
+button.action span,
+button.house span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+}
+button.action.winner,
+button.house.winner {
+  animation: winner 1.5s linear alternate;
+  position: relative;
+}
+button.action.winner::after,
+button.house.winner::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+
+  animation: winner 1.5s linear alternate;
+  animation-delay: 0.2s;
+}
+button.action.winner span,
+button.house.winner span {
+  animation: winner 1.5s linear alternate;
+  animation-delay: 0.6s;
+}
+
+/* 0% {
+  box-shadow: 0 0 0 0 #ffffff30;
+}
+34% {
+  box-shadow: 0 0 0 5vmin #ffffff30;
+}
+68% {
+  box-shadow: 0 0 0 5vmin #ffffff30, 0 0 0 10vmin #ffffff30;
+}
+100% {
+  box-shadow: 0 0 0 5vmin #ffffff30, 0 0 0 10vmin #ffffff30,
+    0 0 0 15vmin #ffffff30;
+} */
+
+@keyframes winner {
+  0% {
+    box-shadow: 0 0 0 0 var(--Animation);
+  }
+  90% {
+    box-shadow: 0 0 0 20vmin var(--Animation);
+  }
+  100% {
+    box-shadow: 0 0 0 20vmin #00000000;
+  }
+}
