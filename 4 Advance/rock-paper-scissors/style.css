@@ -197,6 +197,39 @@ main section#action button#rock:hover {
 main section#action button.hide {
   display: none !important;
 }
+main section#action button#lizard {
+  left: -5vmin;
+  bottom: -12vmin;
+  border-color: var(--Lizard-Gradient1);
+}
+main section#action button#spock {
+  top: 3vmin;
+  left: -12vmin;
+
+  border-color: var(--Spock-Gradient1);
+}
+section#action.advance button#paper {
+  top: 3vmin;
+  right: -12vmin;
+  left: auto;
+}
+section#action.advance button#scissor {
+  top: -16vmin;
+  left: 50%;
+  transform: translateX(-50%);
+}
+section#action.advance button#scissor:hover {
+  transform: translate(-50%, -4%);
+}
+section#action.advance button#rock {
+  left: auto;
+  right: -5vmin;
+  bottom: -12vmin;
+  transform: translate(0, 0);
+}
+section#action.advance button#rock:hover {
+  transform: translateY(-4%);
+}
 
 /* Main End */
 
@@ -535,6 +568,7 @@ button.house.winner span {
 
     width: 100vw;
     height: 100vh;
+    height: 100dvh;
     top: 0 !important;
     left: 0 !important;
     transform: 0 !important;

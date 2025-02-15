@@ -41,10 +41,19 @@ function modifyFunctions() {
     patternImage.src = "./images/bg-pentagon.svg";
     document.querySelector("button.action#lizard").classList.remove("hide");
     document.querySelector("button.action#spock").classList.remove("hide");
+
+    document.querySelector("main section#action").classList.add("advance");
+
+    document.querySelector("img.rules-img").src =
+      "./images/image-rules-bonus.svg";
   } else {
     patternImage.src = "./images/bg-triangle.svg";
     document.querySelector("button.action#lizard").classList.add("hide");
     document.querySelector("button.action#spock").classList.add("hide");
+ 
+    document.querySelector("main section#action").classList.remove("advance");
+
+    document.querySelector("img.rules-img").src = "./images/image-rules.svg";
   }
 }
 
@@ -138,17 +147,27 @@ actionBtns.forEach((btn) => {
 });
 
 function computerPic() {
-  let computerChoise = Math.floor(Math.random() * 3);
+  let computerChoise;
+
+  if (!mode) {
+    computerChoise = Math.floor(Math.random() * 3);
+  } else {
+    computerChoise = Math.floor(Math.random() * 5);
+  }
 
   let srcArr = [
     "./images/icon-paper.svg",
     "./images/icon-scissors.svg",
     "./images/icon-rock.svg",
+    "./images/icon-lizard.svg",
+    "./images/icon-spock.svg",
   ];
   let colorArr = [
     "hsl(230, 89%, 65%)",
     "hsl(40, 84%, 53%)",
     "hsl(349, 70%, 56%)",
+    "hsl(261, 72%, 63%)",
+    "hsl(189, 58%, 57%)",
   ];
 
   let randomImg = document.createElement("img");
