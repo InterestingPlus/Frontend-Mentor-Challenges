@@ -47,6 +47,7 @@ function modifyFunctions() {
 
     document.querySelector("img.rules-img").src =
       "./images/image-rules-bonus.svg";
+    document.querySelector("img.logo").src = "./images/logo-bonus.svg";
   } else {
     patternImage.src = "./images/bg-triangle.svg";
     document.querySelector("button.action#lizard").classList.add("hide");
@@ -55,6 +56,7 @@ function modifyFunctions() {
     document.querySelector("main section#action").classList.remove("advance");
 
     document.querySelector("img.rules-img").src = "./images/image-rules.svg";
+    document.querySelector("img.logo").src = "./images/logo.svg";
   }
 }
 
@@ -423,3 +425,26 @@ function addScore() {
     scoreIndicator.classList.remove("add");
   }, 1800);
 }
+
+actionBtns.forEach((btn) => {
+  btn.addEventListener("mouseover", () => {
+    btn.style.transform = "translateY(-4%)";
+
+    if (mode == 1 && btn.id == "scissor") {
+      btn.style.transform = "translate(-50%, -4%)";
+    }
+    if (mode == 0 && btn.id == "rock") {
+      btn.style.transform = "translate(-50%, -4%)";
+    }
+  });
+  btn.addEventListener("mouseout", () => {
+    btn.style.transform = "translateY(0)";
+
+    if (mode == 1 && btn.id == "scissor") {
+      btn.style.transform = "translate(-50%, 0%)";
+    }
+    if (mode == 0 && btn.id == "rock") {
+      btn.style.transform = "translate(-50%, 0%)";
+    }
+  });
+});
