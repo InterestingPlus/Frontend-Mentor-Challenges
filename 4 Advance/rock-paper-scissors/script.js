@@ -37,6 +37,7 @@ switchMode.addEventListener("click", () => {
 });
 
 function modifyFunctions() {
+  setPositions();
   if (mode) {
     patternImage.src = "./images/bg-pentagon.svg";
     document.querySelector("button.action#lizard").classList.remove("hide");
@@ -50,7 +51,7 @@ function modifyFunctions() {
     patternImage.src = "./images/bg-triangle.svg";
     document.querySelector("button.action#lizard").classList.add("hide");
     document.querySelector("button.action#spock").classList.add("hide");
- 
+
     document.querySelector("main section#action").classList.remove("advance");
 
     document.querySelector("img.rules-img").src = "./images/image-rules.svg";
@@ -114,6 +115,8 @@ actionBtns.forEach((btn) => {
     sound_click.currentTime = 0;
     sound_click.play();
 
+    switchMode.disabled = true;
+
     userSelected = btn;
 
     btn.style.right = "auto";
@@ -129,11 +132,14 @@ actionBtns.forEach((btn) => {
       houseBtn.style.scale = 1.2;
     }, 200);
 
+    console.log(e.target.id);
+
     actionBtns.forEach((subBtns) => {
       subBtns.style.cursor = "default";
       subBtns.disabled = true;
 
-      if (subBtns.id == e.target.id) {
+      console.log(subBtns.id);
+      if (subBtns.id.toLowerCase() == e.target.id.toLowerCase()) {
         return;
       } else {
         subBtns.style.visibility = "hidden";
@@ -189,7 +195,7 @@ function computerPic() {
 
     houseBtn.style.border = `3vmin solid ${colorArr[computerChoise]}`;
 
-    let gameArr = ["paper", "scissor", "rock"];
+    let gameArr = ["paper", "scissor", "rock", "lizard", "spock"];
     let computerSelected = gameArr[computerChoise];
     checkWinner(userSelected.id, computerSelected);
 
@@ -200,24 +206,63 @@ function computerPic() {
 function checkWinner(user, computer) {
   let result;
 
+  // Tie
   if (user == computer) {
     result = "Tie";
     sound_tie.currentTime = 0;
     sound_tie.play();
 
     resetBtn.style.color = "rgba(7, 9, 66, 0.89)";
-  } else if (user == "paper" && computer == "scissor") {
+  }
+  // Paper
+  else if (user == "paper" && computer == "scissor") {
     result = "You Lose";
   } else if (user == "paper" && computer == "rock") {
     result = "You Win";
-  } else if (user == "scissor" && computer == "paper") {
+  } else if (user == "paper" && computer == "lizard") {
+    result = "You Lose";
+  } else if (user == "paper" && computer == "spock") {
+    result = "You Win";
+  }
+  // Scissor
+  else if (user == "scissor" && computer == "paper") {
     result = "You Win";
   } else if (user == "scissor" && computer == "rock") {
     result = "You Lose";
-  } else if (user == "rock" && computer == "paper") {
+  } else if (user == "scissor" && computer == "lizard") {
+    result = "You Win";
+  } else if (user == "scissor" && computer == "spock") {
+    result = "You Lose";
+  }
+  // Rock
+  else if (user == "rock" && computer == "paper") {
     result = "You Lose";
   } else if (user == "rock" && computer == "scissor") {
     result = "You Win";
+  } else if (user == "rock" && computer == "lizard") {
+    result = "You Win";
+  } else if (user == "rock" && computer == "spock") {
+    result = "You Lose";
+  }
+  // Lizard
+  else if (user == "lizard" && computer == "paper") {
+    result = "You Win";
+  } else if (user == "lizard" && computer == "scissor") {
+    result = "You Lose";
+  } else if (user == "lizard" && computer == "rock") {
+    result = "You Lose";
+  } else if (user == "lizard" && computer == "spock") {
+    result = "You Win";
+  }
+  // Spock
+  else if (user == "spock" && computer == "paper") {
+    result = "You Lose";
+  } else if (user == "spock" && computer == "scissor") {
+    result = "You Win";
+  } else if (user == "spock" && computer == "rock") {
+    result = "You Win";
+  } else if (user == "spock" && computer == "lizard") {
+    result = "You Lose";
   } else {
     result = "4O4";
   }
@@ -249,6 +294,72 @@ resetBtn.addEventListener("click", () => {
   reset();
 });
 
+function setPositions() {
+  actionBtns.forEach((btn) => {
+    if (!mode) {
+      if (btn.id == "paper") {
+        btn.style.right = "auto";
+        btn.style.bottom = "auto";
+        btn.style.transform = "translate(0, 0)";
+
+        btn.style.top = "-10vmin";
+        btn.style.left = "-10vmin";
+      } else if (btn.id == "scissor") {
+        btn.style.left = "auto";
+        btn.style.bottom = "auto";
+        btn.style.transform = "translate(0, 0)";
+
+        btn.style.top = "-10vmin";
+        btn.style.right = "-10vmin";
+      } else if (btn.id == "rock") {
+        btn.style.top = "auto";
+        btn.style.right = "auto";
+
+        btn.style.bottom = "0.8vmin";
+        btn.style.left = "50%";
+        btn.style.transform = "translateX(-50%)";
+      }
+    } else {
+      if (btn.id == "paper") {
+        btn.style.left = "auto";
+        btn.style.bottom = "auto";
+        btn.style.transform = "translate(0, 0)";
+
+        btn.style.right = "-12vmin";
+        btn.style.top = "3vmin";
+      } else if (btn.id == "scissor") {
+        btn.style.bottom = "auto";
+        btn.style.right = "auto";
+
+        btn.style.top = "-16vmin";
+        btn.style.left = "50%";
+        btn.style.transform = "translate(-50%, 0)";
+      } else if (btn.id == "rock") {
+        btn.style.left = "auto";
+        btn.style.top = "auto";
+        btn.style.transform = "translate(0, 0)";
+
+        btn.style.right = "-5vmin";
+        btn.style.bottom = "-12vmin";
+      } else if (btn.id == "lizard") {
+        btn.style.right = "auto";
+        btn.style.top = "auto";
+        btn.style.transform = "translate(0, 0)";
+
+        btn.style.left = "-5vmin";
+        btn.style.bottom = "-12vmin";
+      } else if (btn.id == "spock") {
+        btn.style.right = "auto";
+        btn.style.bottom = "auto";
+        btn.style.transform = "translate(0, 0)";
+
+        btn.style.left = "-12vmin";
+        btn.style.top = "3vmin";
+      }
+    }
+  });
+}
+
 function reset() {
   // Result
   winnerPopup.classList.add("hide");
@@ -262,34 +373,10 @@ function reset() {
     btn.disabled = false;
     btn.style.visibility = "visible";
 
-    if (btn.id == "paper") {
-      btn.style.right = "auto";
-      btn.style.bottom = "auto";
-      btn.style.transform = "translate(0, 0)";
+    btn.style.scale = 1;
+    btn.classList.remove("show");
 
-      btn.style.top = "-10vmin";
-      btn.style.left = "-10vmin";
-      btn.style.scale = 1;
-      btn.classList.remove("show");
-    } else if (btn.id == "scissor") {
-      btn.style.left = "auto";
-      btn.style.bottom = "auto";
-      btn.style.transform = "translate(0, 0)";
-
-      btn.style.top = "-10vmin";
-      btn.style.right = "-10vmin";
-      btn.style.scale = 1;
-      btn.classList.remove("show");
-    } else if (btn.id == "rock") {
-      btn.style.top = "auto";
-      btn.style.right = "auto";
-      btn.style.transform = "translateX(-50%)";
-
-      btn.style.bottom = "0.8vmin";
-      btn.style.left = "50%";
-      btn.style.scale = 1;
-      btn.classList.remove("show");
-    }
+    setPositions();
 
     // House Button
     houseBtn.style.cursor = "wait";
@@ -308,6 +395,8 @@ function reset() {
 
   userSelected.classList.remove("winner");
   houseBtn.classList.remove("winner");
+
+  switchMode.disabled = false;
 }
 
 const musicToggle = document.querySelector("#toggleMusic");
