@@ -28,33 +28,18 @@ let background_music = new Audio("sounds/background.mp3");
 background_music.loop = true;
 background_music.volume = 0.3;
 background_music.preload = "auto";
-
-const preloadAudio = (audio) => {
-  audio.volume = 0;
-  audio
-    .play()
-    .then(() => {
-      audio.pause();
-      audio.volume = 1;
-    })
-    .catch((err) => console.log("Autoplay blocked:", err));
-};
-
-// Play the audio after user interaction (required for some browsers)
+let playing = false;
 document.addEventListener("DOMContentLoaded", () => {
   fetchScore();
-
-  // Run this when the page loads
-  // preloadAudio(sound_click);
-  // preloadAudio(sound_tie);
-  // preloadAudio(sound_lose);
-  // preloadAudio(sound_win);
-  // preloadAudio(sound_rules);
 });
 
-background_music
-  .play()
-  .catch((error) => console.log("Autoplay blocked:", error));
+// Play the audio after user interaction (required for some browsers)
+document.body.addEventListener("click", () => {
+  if (!playing) {
+    background_music.play();
+  }
+  playing = true;
+});
 
 function fetchScore() {
   let localScore = localStorage.getItem("score");
