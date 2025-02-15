@@ -4,6 +4,8 @@ let closeRules = document.querySelector("img#close");
 let closeRules1 = document.querySelector("section#rules .close-rules");
 let winnerPopup = document.querySelector(".winner-popup");
 
+let patternImage = document.querySelector("img#bg-pattern");
+
 let resetBtn = document.querySelector("button#reset");
 
 let score = 0;
@@ -17,11 +19,41 @@ document.querySelector("button.score").addEventListener("click", () => {
   scoreIndicator.innerText = score;
 });
 
+// Switch Mode
+const switchMode = document.querySelector("button#switchMode");
+let mode = 0; // Normal
+
+switchMode.addEventListener("click", () => {
+  sound_switch.play();
+
+  if (mode) {
+    switchMode.innerText = "Normal";
+    mode = 0;
+  } else {
+    switchMode.innerText = "Advance";
+    mode = 1;
+  }
+  modifyFunctions();
+});
+
+function modifyFunctions() {
+  if (mode) {
+    patternImage.src = "./images/bg-pentagon.svg";
+    document.querySelector("button.action#lizard").classList.remove("hide");
+    document.querySelector("button.action#spock").classList.remove("hide");
+  } else {
+    patternImage.src = "./images/bg-triangle.svg";
+    document.querySelector("button.action#lizard").classList.add("hide");
+    document.querySelector("button.action#spock").classList.add("hide");
+  }
+}
+
 // Sound Effects
 let sound_click = new Audio("sounds/click.mp3");
 let sound_tie = new Audio("sounds/tie.mp3");
 let sound_lose = new Audio("sounds/lose.mp3");
 let sound_win = new Audio("sounds/win.mp3");
+let sound_switch = new Audio("sounds/switch.mp3");
 let sound_rules = new Audio("sounds/rules.mp3");
 
 let background_music = new Audio("sounds/background.mp3");
@@ -29,6 +61,7 @@ background_music.loop = true;
 background_music.volume = 0.3;
 background_music.preload = "auto";
 let playing = false;
+
 document.addEventListener("DOMContentLoaded", () => {
   fetchScore();
 });
@@ -100,7 +133,7 @@ actionBtns.forEach((btn) => {
 
     computerPic();
 
-    document.querySelector("img#bg-pattern").style.opacity = 0;
+    patternImage.style.opacity = 0;
   });
 });
 
@@ -202,7 +235,7 @@ function reset() {
   winnerPopup.classList.add("hide");
 
   // Bg Pattern
-  document.querySelector("img#bg-pattern").style.opacity = 1;
+  patternImage.style.opacity = 1;
 
   // Action Buttons
   actionBtns.forEach((btn) => {
@@ -261,12 +294,14 @@ function reset() {
 const musicToggle = document.querySelector("#toggleMusic");
 
 musicToggle.addEventListener("click", () => {
+  sound_click.play();
+
   if (background_music.paused) {
     background_music.play();
-    musicToggle.textContent = "🔊 Mute Music";
+    musicToggle.textContent = "🔊";
   } else {
     background_music.pause();
-    musicToggle.textContent = "🔇 Play Music";
+    musicToggle.textContent = "🔇";
   }
 });
 
