@@ -89,6 +89,41 @@ nav button.score span {
   font-size: 2rem;
   font-weight: 700;
   color: var(--Dark-Text);
+
+  position: relative;
+}
+nav button.score span::after {
+  content: "+1";
+  position: absolute;
+  right: -3vmin;
+  bottom: -1vmin;
+  color: rgb(39, 121, 14);
+
+  font-size: 2.5vmin;
+  opacity: 0;
+}
+nav button.score span.add::after {
+  animation: score 1.8s ease-in-out infinite;
+}
+@keyframes score {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+    right: -3vmin;
+    bottom: -1vmin;
+  }
+  10% {
+    opacity: 1;
+  }
+  98% {
+    transform: translateY(-80%);
+  }
+  100% {
+    transform: translateY(-90%);
+    opacity: 1;
+    right: -3vmin;
+    bottom: -1vmin;
+  }
 }
 /* Nav End */
 

@@ -4,6 +4,8 @@ let closeRules = document.querySelector("img#close");
 let closeRules1 = document.querySelector("section#rules .close-rules");
 let winnerPopup = document.querySelector(".winner-popup");
 
+let resetBtn = document.querySelector("button#reset");
+
 let score = 0;
 let scoreIndicator = document.querySelector(".score span");
 scoreIndicator.innerText = score;
@@ -40,6 +42,8 @@ const preloadAudio = (audio) => {
 
 // Play the audio after user interaction (required for some browsers)
 document.addEventListener("DOMContentLoaded", () => {
+  fetchScore();
+
   // Run this when the page loads
   preloadAudio(sound_click);
   preloadAudio(sound_tie);
@@ -51,6 +55,16 @@ document.addEventListener("DOMContentLoaded", () => {
     .play()
     .catch((error) => console.log("Autoplay blocked:", error));
 });
+
+function fetchScore() {
+  let localScore = localStorage.getItem("score");
+
+  console.log(localScore);
+  if (localScore) {
+    score = localScore;
+    scoreIndicator.innerText = score;
+  }
+}
 
 openRules.addEventListener("click", () => {
   sound_rules.play();
@@ -153,6 +167,8 @@ function checkWinner(user, computer) {
     result = "Tie";
     sound_tie.currentTime = 0;
     sound_tie.play();
+
+    resetBtn.style.color = "rgba(7, 9, 66, 0.89)";
   } else if (user == "paper" && computer == "scissor") {
     result = "You Lose";
   } else if (user == "paper" && computer == "rock") {
@@ -173,20 +189,24 @@ function checkWinner(user, computer) {
     sound_win.currentTime = 0;
     sound_win.play();
 
-    scoreIndicator.innerText = ++score;
+    addScore();
     userSelected.classList.add("winner");
+
+    resetBtn.style.color = "rgba(0, 114, 4, 0.86)";
   } else if (result.toLowerCase() == "you lose") {
     houseBtn.classList.add("winner");
 
     sound_lose.currentTime = 0;
     sound_lose.play();
+
+    resetBtn.style.color = "rgba(200, 2, 2, 0.816)";
   }
 
   winnerPopup.querySelector("h2").innerText = result;
   winnerPopup.classList.remove("hide");
 }
 
-document.querySelector("button#reset").addEventListener("click", () => {
+resetBtn.addEventListener("click", () => {
   sound_click.currentTime = 0;
   sound_click.play();
   reset();
@@ -264,3 +284,14 @@ musicToggle.addEventListener("click", () => {
     musicToggle.textContent = "🔇 Play Music";
   }
 });
+
+function addScore() {
+  scoreIndicator.innerText = ++score;
+  scoreIndicator.classList.add("add");
+
+  localStorage.setItem("score", score);
+
+  setTimeout(() => {
+    scoreIndicator.classList.remove("add");
+  }, 1800);
+}
