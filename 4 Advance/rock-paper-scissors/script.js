@@ -45,16 +45,16 @@ document.addEventListener("DOMContentLoaded", () => {
   fetchScore();
 
   // Run this when the page loads
-  preloadAudio(sound_click);
-  preloadAudio(sound_tie);
-  preloadAudio(sound_lose);
-  preloadAudio(sound_win);
-  preloadAudio(sound_rules);
-
-  background_music
-    .play()
-    .catch((error) => console.log("Autoplay blocked:", error));
+  // preloadAudio(sound_click);
+  // preloadAudio(sound_tie);
+  // preloadAudio(sound_lose);
+  // preloadAudio(sound_win);
+  // preloadAudio(sound_rules);
 });
+
+background_music
+  .play()
+  .catch((error) => console.log("Autoplay blocked:", error));
 
 function fetchScore() {
   let localScore = localStorage.getItem("score");
