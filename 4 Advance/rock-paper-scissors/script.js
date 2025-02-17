@@ -425,26 +425,3 @@ function addScore() {
     scoreIndicator.classList.remove("add");
   }, 1800);
 }
-
-actionBtns.forEach((btn) => {
-  btn.addEventListener("mouseover", () => {
-    btn.style.transform = "translateY(-4%)";
-
-    if (mode == 1 && btn.id == "scissor") {
-      btn.style.transform = "translate(-50%, -4%)";
-    }
-    if (mode == 0 && btn.id == "rock") {
-      btn.style.transform = "translate(-50%, -4%)";
-    }
-  });
-  btn.addEventListener("mouseout", () => {
-    btn.style.transform = "translateY(0)";
-
-    if (mode == 1 && btn.id == "scissor") {
-      btn.style.transform = "translate(-50%, 0%)";
-    }
-    if (mode == 0 && btn.id == "rock") {
-      btn.style.transform = "translate(-50%, 0%)";
-    }
-  });
-});

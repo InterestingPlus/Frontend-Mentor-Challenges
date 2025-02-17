@@ -168,9 +168,7 @@ main section#action button.action:disabled {
   background: #fff;
 }
 main section#action button.action:hover {
-  background: #e2e2e2;
-  transform: translateY(-4%);
-  scale: 1.01;
+  scale: 1.04;
 }
 
 main section#action button img {
@@ -239,9 +237,6 @@ section#action.advance button#rock {
   right: -5vmin;
   bottom: -12vmin;
   transform: translate(0, 0);
-}
-section#action.advance button#rock:hover {
-  transform: translateY(-4%);
 }
 
 /* Main End */
